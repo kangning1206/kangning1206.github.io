@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kangning1206.github.io/"/>
-  <updated>2018-11-27T05:26:15.000Z</updated>
+  <updated>2018-11-27T08:07:32.000Z</updated>
   <id>https://kangning1206.github.io/</id>
   
   <author>
@@ -17,13 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>http概述</title>
+    <link href="https://kangning1206.github.io/2018/11/27/http1/"/>
+    <id>https://kangning1206.github.io/2018/11/27/http1/</id>
+    <published>2018-11-27T07:30:21.000Z</published>
+    <updated>2018-11-27T08:07:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="HTTP-的基本性质"><a href="#HTTP-的基本性质" class="headerlink" title="HTTP 的基本性质"></a>HTTP 的基本性质</h1><h2 id="HTTP-是简单的节"><a href="#HTTP-是简单的节" class="headerlink" title="HTTP 是简单的节"></a>HTTP 是简单的节</h2><p>虽然下一代HTTP/2协议将HTTP消息封装到了帧（frames）中，HTTP大体上还是被设计得简单易读。HTTP报文能够被人读懂，还允许简单测试，降低了门槛，对新人很友好。</p><h2 id="HTTP-是可扩展的节"><a href="#HTTP-是可扩展的节" class="headerlink" title="HTTP 是可扩展的节"></a>HTTP 是可扩展的节</h2><p>在 HTTP/1.0 中出现的 HTTP headers 让协议扩展变得非常容易。只要服务端和客户端就新 h<code>eaders</code>达成语义一致，新功能就可以被轻松加入进来。</p><h2 id="HTTP-是无状态，有会话的节"><a href="#HTTP-是无状态，有会话的节" class="headerlink" title="HTTP 是无状态，有会话的节"></a>HTTP 是无状态，有会话的节</h2><p>HTTP是无状态的：在同一个连接中，两个执行成功的请求之间是没有关系的。这就带来了一个问题，用户没有办法在同一个网站中进行连续的交互，比如在一个电商网站里，用户把某个商品加入到购物车，切换一个页面后再次添加了商品，这两次添加商品的请求之间没有关联，浏览器无法知道用户最终选择了哪些商品。而使用HTTP的头部扩展，HTTP Cookies就可以解决这个问题。把Cookies添加到头部中，创建一个会话让每次请求都能共享相同的上下文信息，达成相同的状态。</p><blockquote><p>注意，HTTP本质是无状态的，使用<code>Cookies</code>可以创建有状态的会话。同一台机器cookie是相同了，这样服务器就能辨别客户端访问身份；</p></blockquote><h2 id="HTTP-和连接节"><a href="#HTTP-和连接节" class="headerlink" title="HTTP 和连接节"></a>HTTP 和连接节</h2><p>一个连接是由传输层来控制的，这从根本上不属于HTTP的范围。HTTP并不需要其底层的传输层协议是面向连接的，只需要它是可靠的，或不丢失消息的（至少返回错误）。在互联网中，有两个最常用的传输层协议：TCP是可靠的，而UDP不是。因此，HTTP依赖于面向连接的TCP进行消息传递，但连接并不是必须的。</p><blockquote><p>这也是为什么http协议是建立在tcp协议之上的原因，确保每次连接可靠，但无需实时可用；</p></blockquote><p>HTTP/1.0为每一个请求/响应都打开一个TCP连接，导致了2个缺点：打开一个TCP连接需要多次往返消息传递，因此速度慢。但当多个消息周期性发送时，这样就变得更加高效：暖连接比冷连接更高效。</p><blockquote><p>上边我们说到，http 请求无需实时可用，但从实际网页需求来看，没此简历tcp连接需要3次握手，这种转身就忘记的特性，势必带来了<code>效率</code>问题，因此在http1.1中引入了长连接；也就说我们看到的头部 <code>Connection: keep-alive</code> 信息；</p></blockquote><blockquote><p> 长连接和短连接<br>Connection: keep-alive<br>Connection: close</p></blockquote><p>为了减轻这些缺陷，HTTP/1.1引入了流水线（被证明难以实现）和持久连接的概念：底层的TCP连接可以通过Connection头部来被部分控制。HTTP/2则发展得更远，通过在一个连接复用消息的方式来让这个连接始终保持为暖连接。 </p><p>为了更好的适合HTTP，设计一种更好传输协议的进程一直在进行。Google就研发了一种以UDP为基础，能提供更可靠更高效的传输协议QUIC。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;HTTP-的基本性质&quot;&gt;&lt;a href=&quot;#HTTP-的基本性质&quot; class=&quot;headerlink&quot; title=&quot;HTTP 的基本性质&quot;&gt;&lt;/a&gt;HTTP 的基本性质&lt;/h1&gt;&lt;h2 id=&quot;HTTP-是简单的节&quot;&gt;&lt;a href=&quot;#HTTP-是简单的节&quot;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>前端知识点分类</title>
     <link href="https://kangning1206.github.io/2018/11/27/resource-md/"/>
     <id>https://kangning1206.github.io/2018/11/27/resource-md/</id>
     <published>2018-11-27T01:48:25.000Z</published>
-    <updated>2018-11-27T05:26:15.000Z</updated>
+    <updated>2018-11-28T00:56:38.000Z</updated>
     
-    <content type="html"><![CDATA[<hr><h1 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h1><ul><li>vue.js基本</li><li>vuex 数据状态管理</li><li>axios使用</li><li>vue-router</li><li>pc端ui和移动端ui</li></ul><h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><ul><li>闭包</li><li>作用域、作用域链路</li><li>继承</li><li>es2015新特性</li></ul><h1 id="web原理"><a href="#web原理" class="headerlink" title="web原理"></a>web原理</h1><ul><li>http</li><li>304缓存</li><li>cors共享</li><li>浏览器原理</li></ul><h1 id="node"><a href="#node" class="headerlink" title="node"></a>node</h1><ul><li>koa.js</li></ul><h1 id="工程化"><a href="#工程化" class="headerlink" title="工程化"></a>工程化</h1><ul><li>webpack</li><li>客户端es6，vue,react配置</li><li>服务器端es6</li></ul><h1 id="质量"><a href="#质量" class="headerlink" title="质量"></a>质量</h1><ul><li>eslint配置和常用标准</li><li>单元测试、覆盖率、用户测试：mocha,karma,e2e<h1 id="了解库"><a href="#了解库" class="headerlink" title="了解库"></a>了解库</h1></li><li>测试框架,比如 Mocha、Jasmine、Karma、Tape</li><li>mock.js</li></ul><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><ul><li>rest接口开发模式</li></ul><h1 id="学习网站"><a href="#学习网站" class="headerlink" title="学习网站"></a>学习网站</h1><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview</a></p>]]></content>
+    <content type="html"><![CDATA[<hr><h1 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h1><ul><li>vue.js基本</li><li>vuex 数据状态管理</li><li>axios使用</li><li>vue-router</li><li>pc端ui和移动端ui</li></ul><h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><ul><li>闭包</li><li>作用域、作用域链路</li><li>继承</li><li>es2015新特性</li></ul><h1 id="web原理"><a href="#web原理" class="headerlink" title="web原理"></a>web原理</h1><ul><li>http</li><li>304缓存</li><li>cors共享</li><li>浏览器原理</li></ul><h1 id="node"><a href="#node" class="headerlink" title="node"></a>node</h1><ul><li>koa.js</li></ul><h1 id="工程化"><a href="#工程化" class="headerlink" title="工程化"></a>工程化</h1><ul><li>webpack</li><li>客户端es6，vue,react配置</li><li>服务器端es6</li></ul><h1 id="质量"><a href="#质量" class="headerlink" title="质量"></a>质量</h1><ul><li>eslint配置和常用标准</li><li>单元测试、覆盖率、用户测试：mocha,karma,e2e<h1 id="了解库"><a href="#了解库" class="headerlink" title="了解库"></a>了解库</h1></li><li>测试框架,比如 Mocha、Jasmine、Karma、Tape</li><li>mock.js</li></ul><h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><ul><li>抓包工具，如charles使用</li><li>浏览器开发者工具</li><li>编辑器</li><li>检查 Cache 相关 HTTP 首部的工具. <a href="https://redbot.org/" target="_blank" rel="noopener">RedBot</a></li></ul><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><ul><li>rest接口开发模式</li></ul><h1 id="学习网站"><a href="#学习网站" class="headerlink" title="学习网站"></a>学习网站</h1><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview</a></p>]]></content>
     
     <summary type="html">
     

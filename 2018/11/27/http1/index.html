@@ -27,7 +27,7 @@
     <!--Title-->
 
 
-<title>Hello World | 点滴</title>
+<title>http概述 | 点滴</title>
 
 
     <link rel="alternate" href="/atom.xml" title="点滴" type="application/atom+xml">
@@ -132,9 +132,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="Hello World">
+        <h1 id="http概述">
             
-	            Hello World
+	            http概述
             
         </h1>
         <div class="post-meta">
@@ -174,15 +174,25 @@
     </div>
     
     <div class="post-body post-content">
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1 id="HTTP-的基本性质"><a href="#HTTP-的基本性质" class="headerlink" title="HTTP 的基本性质"></a>HTTP 的基本性质</h1><h2 id="HTTP-是简单的节"><a href="#HTTP-是简单的节" class="headerlink" title="HTTP 是简单的节"></a>HTTP 是简单的节</h2><p>虽然下一代HTTP/2协议将HTTP消息封装到了帧（frames）中，HTTP大体上还是被设计得简单易读。HTTP报文能够被人读懂，还允许简单测试，降低了门槛，对新人很友好。</p>
+<h2 id="HTTP-是可扩展的节"><a href="#HTTP-是可扩展的节" class="headerlink" title="HTTP 是可扩展的节"></a>HTTP 是可扩展的节</h2><p>在 HTTP/1.0 中出现的 HTTP headers 让协议扩展变得非常容易。只要服务端和客户端就新 h<code>eaders</code>达成语义一致，新功能就可以被轻松加入进来。</p>
+<h2 id="HTTP-是无状态，有会话的节"><a href="#HTTP-是无状态，有会话的节" class="headerlink" title="HTTP 是无状态，有会话的节"></a>HTTP 是无状态，有会话的节</h2><p>HTTP是无状态的：在同一个连接中，两个执行成功的请求之间是没有关系的。这就带来了一个问题，用户没有办法在同一个网站中进行连续的交互，比如在一个电商网站里，用户把某个商品加入到购物车，切换一个页面后再次添加了商品，这两次添加商品的请求之间没有关联，浏览器无法知道用户最终选择了哪些商品。而使用HTTP的头部扩展，HTTP Cookies就可以解决这个问题。把Cookies添加到头部中，创建一个会话让每次请求都能共享相同的上下文信息，达成相同的状态。</p>
+<blockquote>
+<p>注意，HTTP本质是无状态的，使用<code>Cookies</code>可以创建有状态的会话。同一台机器cookie是相同了，这样服务器就能辨别客户端访问身份；</p>
+</blockquote>
+<h2 id="HTTP-和连接节"><a href="#HTTP-和连接节" class="headerlink" title="HTTP 和连接节"></a>HTTP 和连接节</h2><p>一个连接是由传输层来控制的，这从根本上不属于HTTP的范围。HTTP并不需要其底层的传输层协议是面向连接的，只需要它是可靠的，或不丢失消息的（至少返回错误）。在互联网中，有两个最常用的传输层协议：TCP是可靠的，而UDP不是。因此，HTTP依赖于面向连接的TCP进行消息传递，但连接并不是必须的。</p>
+<blockquote>
+<p>这也是为什么http协议是建立在tcp协议之上的原因，确保每次连接可靠，但无需实时可用；</p>
+</blockquote>
+<p>HTTP/1.0为每一个请求/响应都打开一个TCP连接，导致了2个缺点：打开一个TCP连接需要多次往返消息传递，因此速度慢。但当多个消息周期性发送时，这样就变得更加高效：暖连接比冷连接更高效。</p>
+<blockquote>
+<p>上边我们说到，http 请求无需实时可用，但从实际网页需求来看，没此简历tcp连接需要3次握手，这种转身就忘记的特性，势必带来了<code>效率</code>问题，因此在http1.1中引入了长连接；也就说我们看到的头部 <code>Connection: keep-alive</code> 信息；</p>
+</blockquote>
+<blockquote>
+<p> 长连接和短连接<br>Connection: keep-alive<br>Connection: close</p>
+</blockquote>
+<p>为了减轻这些缺陷，HTTP/1.1引入了流水线（被证明难以实现）和持久连接的概念：底层的TCP连接可以通过Connection头部来被部分控制。HTTP/2则发展得更远，通过在一个连接复用消息的方式来让这个连接始终保持为暖连接。 </p>
+<p>为了更好的适合HTTP，设计一种更好传输协议的进程一直在进行。Google就研发了一种以UDP为基础，能提供更可靠更高效的传输协议QUIC。</p>
 
     </div>
     
@@ -216,11 +226,11 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2018/11/27/resource-md/" class="pre-post btn btn-default" title="前端知识点分类">
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">前端知识点分类</span>
-        </a>
     
+        <a href="/2018/11/27/resource-md/" class="next-post btn btn-default" title="前端知识点分类">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">前端知识点分类</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
     
 </div>
 
@@ -262,7 +272,7 @@
     <div class="widget">
         <h3 class="title">Table of Contents</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HTTP-的基本性质"><span class="toc-text">HTTP 的基本性质</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-是简单的节"><span class="toc-text">HTTP 是简单的节</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-是可扩展的节"><span class="toc-text">HTTP 是可扩展的节</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-是无状态，有会话的节"><span class="toc-text">HTTP 是无状态，有会话的节</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-和连接节"><span class="toc-text">HTTP 和连接节</span></a></li></ol></li></ol>
         
     </div>
 </aside>
