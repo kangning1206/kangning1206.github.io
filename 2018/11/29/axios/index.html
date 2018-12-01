@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="点滴" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        axios遇到OPTIONS请求｜undefined
+        
+    </title>
+
+    <link rel="canonical" href="https://kangning1206.github.io/2018/11/29/axios/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+</head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="true" data-istags="false
+" data-ishome="false">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    点滴
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+                        
+							
+								
+							
+						
+                    
+					
+					
+						<li>
+							<a href="/about">About</a>
+						</li>
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img" src="">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>axios遇到OPTIONS请求</h1>
+                    
+                    <span class="meta">
+                         作者 
+                        <span>
+                          日期 2018-11-29
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            axios遇到OPTIONS请求
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h2 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h2><p>Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。大部分前端工程师在使用axios或者类似fetch库，<br>方便易用，但在CORS跨域资源获取中遇到的问题不少。</p>
+<h2 id="axios-使用"><a href="#axios-使用" class="headerlink" title="axios 使用"></a>axios 使用</h2><p>省略…<a href="https://www.kancloud.cn/yunye/axios/234845" target="_blank" rel="noopener">文档</a></p>
+<h2 id="什么情况下需要-CORS-？"><a href="#什么情况下需要-CORS-？" class="headerlink" title="什么情况下需要 CORS ？"></a>什么情况下需要 CORS ？</h2><p>在下列场景中使用跨域 HTTP 请求：</p>
+<ul>
+<li>由 XMLHttpRequest 或 Fetch 发起的跨域 HTTP 请求。</li>
+<li>Web 字体 (CSS 中通过 @font-face 使用跨域字体资源), 因此，网站就可以发布 TrueType 字体资源，并只允许已授权网站进行跨站调用。</li>
+<li>WebGL 贴图</li>
+<li>使用 drawImage 将 Images/video 画面绘制到 canvas</li>
+</ul>
+<blockquote>
+<p>这次说的是第一种 XMLHttpRequest 发起的跨域 HTTP 请求。</p>
+</blockquote>
+<blockquote>
+<p>大家可能会认为，项目中客户端无非是发起get、post请求，是否允许客户端访问，是服务器端要控制的，只要服务器响应头设置</p>
+</blockquote>
+<p>‘Access-Control-Allow-Origin’:’*’ //所有客户端<br>‘Access-Control-Allow-Origin’:’请求Origin值’  //允许特定客户端</p>
+<p>其次，服务器响应对应个get、post请求类型和路径，这样就OK了。</p>
+<h2 id="真的OK吗"><a href="#真的OK吗" class="headerlink" title="真的OK吗?"></a>真的OK吗?</h2><p>如果是OK的，说明应用场景叫简单；属于<code>简单请求</code>。</p>
+<h2 id="简单请求"><a href="#简单请求" class="headerlink" title="简单请求"></a>简单请求</h2><p>某些请求不会触发 CORS 预检请求。本文称这样的请求为“简单请求”，请注意，该术语并不属于 Fetch （其中定义了 CORS）规范。若请求满足所有下述条件，则该请求可视为“简单请求”：</p>
+<ul>
+<li>使用下列方法之一：<ul>
+<li>GET</li>
+<li>HEAD</li>
+<li>POST</li>
+</ul>
+</li>
+<li>Fetch 规范定义了对 CORS 安全的首部字段集合，不得人为设置该集合之外的其他首部字段。该集合为：<ul>
+<li>Accept</li>
+<li>Accept-Language</li>
+<li>Content-Language</li>
+<li>Content-Type （需要注意额外的限制）</li>
+<li>DPR</li>
+<li>Downlink</li>
+<li>Save-Data</li>
+<li>Viewport-Width</li>
+<li>Width</li>
+</ul>
+</li>
+<li>Content-Type 的值仅限于下列三者之一：<ul>
+<li>text/plain</li>
+<li>multipart/form-data</li>
+<li>application/x-www-form-urlencoded</li>
+<li>请求中的任意XMLHttpRequestUpload 对象均没有注册任何事件监听器；XMLHttpRequestUpload 对象可以使用 XMLHttpRequest.upload 属性访问。</li>
+<li>请求中没有使用 ReadableStream 对象。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>满足以上条件时，是简单请求，浏览器发送一次请求。</p>
+</blockquote>
+<h2 id="预检请求"><a href="#预检请求" class="headerlink" title="预检请求"></a>预检请求</h2><p>与简单请求不同，“需预检的请求”要求必须首先使用 OPTIONS   方法发起一个预检请求到服务器，以获知服务器是否允许该实际请求。”预检请求“的使用，可以避免跨域请求对服务器的用户数据产生未预期的影响。</p>
+<blockquote>
+<p>在破坏掉简单请求规则后，浏览器首先发起一个method=OPTIONS 的请求，询问服务器是否可以跨域等要求(跨域、方法、自定义头信息等特殊要求)，不满足则直接拒绝；如果同意时，则响应，并且响应头 新增 如下两个字段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Access-Control-Allow-Methods&apos; // 服务器所支持的请求方法</span><br><span class="line">Access-Control-Allow-Headers&apos; // 浏览器自定义的头部</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>加入原有请求是POST方式，在获的允许到，浏览器会再次发送一次POST请求；</p>
+<blockquote>
+<p>举个生活中的简单例子，现在小区周边的学校晚上都开放了，允许居民健身运动；<br>比如春节期间，你晚上去学校了，到了门口一看，门卫说假期不对外开放，结果是不能进去健身了，而且白跑一趟，浪费时间和精力，这相当于一个简单请求；<br>优化：去之前先打个电话，询问下是否可以健身，可以就去，不可以就去做其他事情，是不是很省事情呀，这个过程就是 OPTIONS 请求。</p>
+</blockquote>
+<p>继续故事，第二天，你仍然事先打电话询问，然后再做下一步打算，去或不去；时间多了，你会烦死的，门卫也会烦死的；<br>优化：多次电话询问后，门卫聪明了，这次他告诉你，接下来7天内每天都开放，这样你在最近7天肯定不会在打电话先咨询了；这个时间就是 OPTIONS 请求响应头<code>Access-Control-Max-Age</code>中设置缓存时间。</p>
+<p>从中我们应该能感知到，在非简单请求时，浏览器认为是个<code>重请求</code>，超出了服务器默认设置，浏览器会认为可能会被服务器拒绝掉，因此携带大量数据去请求<code>可能白跑一趟</code>，做了优化，先<code>预检请求</code>,看下服务器是否允许，允许多久等，对于跨域请求性能有很大提高；</p>
+<h4 id="当请求满足下述任一条件时，即应首先发送预检请求："><a href="#当请求满足下述任一条件时，即应首先发送预检请求：" class="headerlink" title="当请求满足下述任一条件时，即应首先发送预检请求："></a>当请求满足下述任一条件时，即应首先发送预检请求：</h4><ul>
+<li><p>使用了下面任一 HTTP 方法：</p>
+<ul>
+<li>PUT</li>
+<li>DELETE</li>
+<li>CONNECT</li>
+<li>OPTIONS</li>
+<li>TRACE</li>
+<li>PATCH</li>
+</ul>
+</li>
+<li>人为设置了对 CORS 安全的首部字段集合之外的其他首部字段。该集合为：<ul>
+<li>Accept</li>
+<li>Accept-Language</li>
+<li>Content-Language</li>
+<li>Content-Type (but note the additional requirements below)</li>
+<li>DPR</li>
+<li>Downlink</li>
+<li>Save-Data</li>
+<li>Viewport-Width</li>
+<li>Width</li>
+</ul>
+</li>
+<li>Content-Type 的值不属于下列之一:<ul>
+<li>application/x-www-form-urlencoded</li>
+<li>multipart/form-data</li>
+<li>text/plain</li>
+</ul>
+</li>
+<li>请求中的XMLHttpRequestUpload 对象注册了任意多个事件监听器。</li>
+<li>请求中使用了ReadableStream对象。</li>
+</ul>
+<h2 id="服务器改造"><a href="#服务器改造" class="headerlink" title="服务器改造"></a>服务器改造</h2><p>大部分情况下，我们设置了跨域，但忽略了对 OPTIONS 响应的处理，最终没有处理或者返回404，错误路径；</p>
+<p>以下是 koa.js 简单处理，OPTIONS 请求返回204，允许访问，当然你可以针对路径设置 OPTIONS；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * [cros跨域处理]</span><br><span class="line"> * @param  &#123;[type]&#125; async (ctx,         next [description]</span><br><span class="line"> * @return &#123;[type]&#125;       [description]</span><br><span class="line"> */</span><br><span class="line">app.use(async (ctx, next) =&gt; &#123;</span><br><span class="line">  ctx.set(&apos;Access-Control-Allow-Origin&apos;, &apos;*&apos;);</span><br><span class="line">  if (ctx.method === &apos;OPTIONS&apos;) &#123;</span><br><span class="line">    // 请求method =options，是预检请求</span><br><span class="line">    // 此时做些简单，处理，如果希望访问则如下，不希望时，</span><br><span class="line">    // 设置缓存时间，下次 OPTIONS 请求不会再次发起，直接使用真实的请求如GET、POST、PUT</span><br><span class="line">    // ctx.set(&quot;Access-Control-Max-Age&quot;, 86400000);</span><br><span class="line">    ctx.set(&apos;Access-Control-Allow-Methods&apos;, &apos;OPTIONS, GET, PUT, POST, DELETE&apos;);</span><br><span class="line">    ctx.set(&apos;Access-Control-Allow-Headers&apos;, ctx.header[&apos;access-control-request-headers&apos;]);</span><br><span class="line">    // 发回204状态码，数据是空</span><br><span class="line">    ctx.response.status = 204;</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    await next();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>参考：<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS</a></p>
+
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2018/11/30/performance/" data-toggle="tooltip" data-placement="top" title="性能优化">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2018/11/29/xss/" data-toggle="tooltip" data-placement="top" title="xss 攻击与防御">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#axios"><span class="toc-text">axios</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#axios-使用"><span class="toc-text">axios 使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么情况下需要-CORS-？"><span class="toc-text">什么情况下需要 CORS ？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#真的OK吗"><span class="toc-text">真的OK吗?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#简单请求"><span class="toc-text">简单请求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#预检请求"><span class="toc-text">预检请求</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#当请求满足下述任一条件时，即应首先发送预检请求："><span class="toc-text">当请求满足下述任一条件时，即应首先发送预检请求：</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#服务器改造"><span class="toc-text">服务器改造</span></a></li>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 点滴 2018
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://kangning1206.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="">
+</body>
+
+</html>
