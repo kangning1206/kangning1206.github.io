@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://kangning1206.github.io">
-  <title>Archives: 2018 | 点滴</title>
+  <title>css | 点滴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="点滴">
-<meta property="og:url" content="https://kangning1206.github.io/archives/2018/index.html">
+  <meta name="description" content="CSS 实际上如何工作？当浏览器显示文档时，它必须将文档的内容与其样式信息结合。它分两个阶段处理文档： 浏览器将 HTML 和 CSS 转化成 DOM （文档对象模型）。DOM在计算机内存中表示文档。它把文档内容和其样式结合在一起。浏览器显示 DOM 的内容。    如何将你的 CSS 应用到你的 HTML 上 外部样式表 内部样式表 内联样式  CSS 声明由于 属性名和属性值 结对构成；">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css">
+<meta property="og:url" content="https://kangning1206.github.io/2015/01/30/css/index.html">
 <meta property="og:site_name" content="点滴">
+<meta property="og:description" content="CSS 实际上如何工作？当浏览器显示文档时，它必须将文档的内容与其样式信息结合。它分两个阶段处理文档： 浏览器将 HTML 和 CSS 转化成 DOM （文档对象模型）。DOM在计算机内存中表示文档。它把文档内容和其样式结合在一起。浏览器显示 DOM 的内容。    如何将你的 CSS 应用到你的 HTML 上 外部样式表 内部样式表 内联样式  CSS 声明由于 属性名和属性值 结对构成；">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://mdn.mozillademos.org/files/11781/rendering.svg">
+<meta property="og:image" content="https://mdn.mozillademos.org/files/16188/css_syntax_-_declaration.png">
+<meta property="og:updated_time" content="2018-12-01T09:43:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="点滴">
+<meta name="twitter:title" content="css">
+<meta name="twitter:description" content="CSS 实际上如何工作？当浏览器显示文档时，它必须将文档的内容与其样式信息结合。它分两个阶段处理文档： 浏览器将 HTML 和 CSS 转化成 DOM （文档对象模型）。DOM在计算机内存中表示文档。它把文档内容和其样式结合在一起。浏览器显示 DOM 的内容。    如何将你的 CSS 应用到你的 HTML 上 外部样式表 内部样式表 内联样式  CSS 声明由于 属性名和属性值 结对构成；">
+<meta name="twitter:image" content="https://mdn.mozillademos.org/files/11781/rendering.svg">
   
     <link rel="alternative" href="/atom.xml" title="点滴" type="application/atom+xml">
   
@@ -150,76 +157,253 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-css" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/27/http1/" class="archive-article-date">
-  	<time datetime="2018-11-27T07:30:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-27</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/27/http1/">http概述</a>
+    <h1 class="article-title" itemprop="name">
+      css
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/27/resource-md/" class="archive-article-date">
-  	<time datetime="2018-11-27T01:48:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-27</time>
+        
+        <a href="/2015/01/30/css/" class="archive-article-date">
+  	<time datetime="2015-01-30T05:44:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-01-30</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/27/resource-md/">前端知识点分类</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="CSS-实际上如何工作？"><a href="#CSS-实际上如何工作？" class="headerlink" title="CSS 实际上如何工作？"></a>CSS 实际上如何工作？</h2><p>当浏览器显示文档时，它必须将文档的内容与其样式信息结合。它分两个阶段处理文档：</p>
+<p>浏览器将 HTML 和 CSS 转化成 DOM （文档对象模型）。DOM在计算机内存中表示文档。它把文档内容和其样式结合在一起。<br>浏览器显示 DOM 的内容。</p>
+<div style="text-align: center;"><img src="https://mdn.mozillademos.org/files/11781/rendering.svg" alt=""></div>
 
-        <div class="article-info info-on-right">
-          
-          
 
+<h2 id="如何将你的-CSS-应用到你的-HTML-上"><a href="#如何将你的-CSS-应用到你的-HTML-上" class="headerlink" title="如何将你的 CSS 应用到你的 HTML 上"></a>如何将你的 CSS 应用到你的 HTML 上</h2><ul>
+<li>外部样式表</li>
+<li>内部样式表</li>
+<li>内联样式</li>
+</ul>
+<h2 id="CSS-声明"><a href="#CSS-声明" class="headerlink" title="CSS 声明"></a>CSS 声明</h2><p>由于 属性名和属性值 结对构成；</p>
+<div style="text-align: center;"><img src="https://mdn.mozillademos.org/files/16188/css_syntax_-_declaration.png" alt=""></div>
+
+<h2 id="css-选择器分类"><a href="#css-选择器分类" class="headerlink" title="css 选择器分类"></a>css 选择器分类</h2><ul>
+<li>简单选择器（Simple selectors）：通过元素类型、class 或 id 匹配一个或多个元素。</li>
+<li>属性选择器（Attribute selectors）：通过 属性 / 属性值 匹配一个或多个元素。</li>
+<li>伪类（Pseudo-classes）：匹配处于确定状态的一个或多个元素，比如被鼠标指针悬停的元素，或当前被选中或未选中的复选框，或元素是DOM树中一父节点的第一个子节点。</li>
+<li>伪元素（Pseudo-elements）:匹配处于相关的确定位置的一个或多个元素，例如每个段落的第一个字，或者某个元素之前生成的内容。 </li>
+<li>组合器（Combinators）：这里不仅仅是选择器本身，还有以有效的方式组合两个或更多的选择器用于非常特定的选择的方法。例如，你可以只选择divs的直系子节点的段落，或者直接跟在headings后面的段落。</li>
+<li>多重选择器（Multiple selectors）：这些也不是单独的选择器；这个思路是将以逗号分隔开的多个选择器放在一个CSS规则下面， 以将一组声明应用于由这些选择器选择的所有元素。</li>
+</ul>
+<h3 id="简单选择器"><a href="#简单选择器" class="headerlink" title="简单选择器"></a>简单选择器</h3><h3 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h3><p>伪类不是选择元素，而是元素的某些部分，或仅在某些特定上下文中存在的元素。它们有两种主要类型 ： 伪类和伪元素。</p>
+<p>一个 CSS  伪类（pseudo-class） 是<code>一个以冒号(:)</code>作为前缀，被添加到一个选择器末尾的关键字，当你希望样式在特定状态下才被呈现到指定的元素时，你可以往元素的选择器后面加上对应的伪类（pseudo-class）。你可能希望某个元素在处于某种状态下呈现另一种样式，例如当鼠标悬停在元素上面时，或者当一个复选框被禁用或被勾选时，又或者当一个元素是它在 DOM 树中父元素的第一个子元素时。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:active</span></span><br><span class="line"><span class="selector-pseudo">:any</span></span><br><span class="line"><span class="selector-pseudo">:checked</span></span><br><span class="line"><span class="selector-pseudo">:default</span></span><br><span class="line"><span class="selector-pseudo">:dir()</span></span><br><span class="line"><span class="selector-pseudo">:disabled</span></span><br><span class="line"><span class="selector-pseudo">:empty</span></span><br><span class="line"><span class="selector-pseudo">:enabled</span></span><br><span class="line"><span class="selector-pseudo">:first</span></span><br><span class="line"><span class="selector-pseudo">:first-child</span></span><br><span class="line"><span class="selector-pseudo">:first-of-type</span></span><br><span class="line"><span class="selector-pseudo">:fullscreen</span></span><br><span class="line"><span class="selector-pseudo">:focus</span></span><br><span class="line"><span class="selector-pseudo">:hover</span></span><br><span class="line"><span class="selector-pseudo">:indeterminate</span></span><br><span class="line"><span class="selector-pseudo">:in-range</span></span><br><span class="line"><span class="selector-pseudo">:invalid</span></span><br><span class="line"><span class="selector-pseudo">:lang()</span></span><br><span class="line"><span class="selector-pseudo">:last-child</span></span><br><span class="line"><span class="selector-pseudo">:last-of-type</span></span><br><span class="line"><span class="selector-pseudo">:left</span></span><br><span class="line"><span class="selector-pseudo">:link</span></span><br><span class="line"><span class="selector-pseudo">:not()</span></span><br><span class="line"><span class="selector-pseudo">:nth-child()</span></span><br><span class="line"><span class="selector-pseudo">:nth-last-child()</span></span><br><span class="line"><span class="selector-pseudo">:nth-last-of-type()</span></span><br><span class="line"><span class="selector-pseudo">:nth-of-type()</span></span><br><span class="line"><span class="selector-pseudo">:only-child</span></span><br><span class="line"><span class="selector-pseudo">:only-of-type</span></span><br><span class="line"><span class="selector-pseudo">:optional</span></span><br><span class="line"><span class="selector-pseudo">:out-of-range</span></span><br><span class="line"><span class="selector-pseudo">:read-only</span></span><br><span class="line"><span class="selector-pseudo">:read-write</span></span><br><span class="line"><span class="selector-pseudo">:required</span></span><br><span class="line"><span class="selector-pseudo">:right</span></span><br><span class="line"><span class="selector-pseudo">:root</span></span><br><span class="line"><span class="selector-pseudo">:scope</span></span><br><span class="line"><span class="selector-pseudo">:target</span></span><br><span class="line"><span class="selector-pseudo">:valid</span></span><br><span class="line"><span class="selector-pseudo">:visited</span></span><br></pre></td></tr></table></figure>
+<h3 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h3><p>伪元素（Pseudo-element）跟伪类很像，但它们又有不同的地方。它们都是关键字，但这次伪元素前缀是<code>两个冒号 (::)</code>， 同样是添加到选择器后面去选择某个元素的某个部分。</p>
+<p>我最熟悉的清除浮动 <code>.cleanfix</code>，就是利用了伪元素，给其设置样式和内容以此影响浮动；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">::after</span><br><span class="line">::before</span><br><span class="line">::first-letter</span><br><span class="line">::first-line</span><br><span class="line">::selection</span><br><span class="line">::backdrop</span><br></pre></td></tr></table></figure></p>
+<h3 id="组合选择器"><a href="#组合选择器" class="headerlink" title="组合选择器"></a>组合选择器</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th style="text-align:center">组合器</th>
+<th style="text-align:left">选择</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>选择器组</td>
+<td style="text-align:center">A,B</td>
+<td style="text-align:left">匹配满足A（和/或）B的任意元素</td>
+</tr>
+<tr>
+<td>后代选择器</td>
+<td style="text-align:center">A B</td>
+<td style="text-align:left">匹配B元素，满足条件：B是A的后代结点（B是A的子节点，或者A的子节点的子节点）</td>
+</tr>
+<tr>
+<td>子选择器</td>
+<td style="text-align:center">A &gt; B</td>
+<td style="text-align:left">匹配B元素，满足条件：B是A的<code>直接子节点</code></td>
+</tr>
+<tr>
+<td>相邻兄弟选择器</td>
+<td style="text-align:center">A + B</td>
+<td style="text-align:left">匹配B元素，满足条件：B是A的<code>下一个兄弟节点</code>（AB有相同的父结点，并且B紧跟在A的后面）</td>
+</tr>
+<tr>
+<td>通用兄弟选择器</td>
+<td style="text-align:center">A ~ B</td>
+<td style="text-align:left">匹配B元素，满足条件：B是A之后的兄弟节点中的任意一个（AB有相同的父节点，B在A之后，但不一定是紧挨着A）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h3><p>颜色是由 Red、Green、Blue三个颜色调和，每个颜色256种</p>
+<ul>
+<li>名称：如 <code>red</code></li>
+<li>16进制 如 <code>#ffff00</code>,其中两个表示一个颜色通道</li>
+<li>RGB,如 <code>rgb(255,0,0);</code>, rbg是个函数，会帮我们计算，差别是每个是10进制</li>
+<li><p>HSL 支持度比RGB稍微差一点的是HSL（旧版本的IE浏览器不支持），这是在众多开发者对其产生兴趣之后才实现的——hsl()函数接受三个表示色调、饱和度以及明度的参数，使用与上述三种不同的方式来区分大约1670万种颜色：</p>
+<ul>
+<li>色调：颜色的底色调。这个值在0到360之间，表示色轮的角度。</li>
+<li>饱和度：饱和度是多少？这需要一个从0-100%的值，其中0是没有颜色（它将显示为灰色），100%是全彩色饱和度。</li>
+<li>明度：颜色有多亮或明亮？这需要一个从0-100%的值，其中0是无光（它会出现全黑的），100%是充满光的（它会出现全白）。</li>
+</ul>
+</li>
+<li><p>RGBA 和 HSLA 是RGB、HSL的对应透明度transparency函数；</p>
+</li>
+</ul>
+<blockquote>
+<p>颜色数值颜色，在chrome开发者工具，颜色面板可以转化查看;css更多函数值另查手册；</p>
+</blockquote>
+<blockquote>
+<p><code>RGBA透明度与opacity属性差别</code>，opacity除了影响自身透明，还影响了子节点透明度，rgba只设置了自己；</p>
+</blockquote>
+<h3 id="选择器计算规则"><a href="#选择器计算规则" class="headerlink" title="选择器计算规则"></a>选择器计算规则</h3><p>一个选择器具有的专用性的量是用四种不同的值（或组件）来衡量的，它们可以被认为是千位，百位，十位和个位——在四个列中的四个简单数字：</p>
+<ul>
+<li>千位：如果声明是在style 属性中该列加1分（这样的声明没有选择器，所以它们的专用性总是1000。）否则为0。</li>
+<li>百位：在整个选择器中每包含一个ID选择器就在该列中加1分。</li>
+<li>十位：在整个选择器中每包含一个类选择器、属性选择器、或者伪类就在该列中加1分。</li>
+<li>个位：在整个选择器中每包含一个元素选择器或伪元素就在该列中加1分。</li>
+</ul>
+<h3 id="float-元素如何工作"><a href="#float-元素如何工作" class="headerlink" title="float 元素如何工作"></a>float 元素如何工作</h3><p>浮动元素会脱离正常的文档布局流，并吸附到<code>其父容器的左边 flaot:left</code>。在正常布局中位于该浮动元素之下的内容，此时会围绕着浮动元素，填满其右侧的空间。</p>
+<p>注意浮动内容仍然遵循盒子模型诸如外边距和边界。我们设置一下图片右侧的外边距就能阻止右侧的文字紧贴着图片。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">.clearfix &#123;</span><br><span class="line">  zoom: 1;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix:after &#123;</span><br><span class="line">  content: &quot;&quot;;</span><br><span class="line">  display: table;</span><br><span class="line">&#125;</span><br><span class="line">.clearfix:after &#123;</span><br><span class="line">  clear: both;</span><br><span class="line">&#125;*/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">.fn-clear &#123;</span><br><span class="line">  zoom: 1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.clearfix:after &#123;</span><br><span class="line">  visibility: hidden;</span><br><span class="line">  display: block;</span><br><span class="line">  font-size: 0;</span><br><span class="line">  height: 0;</span><br><span class="line">  content: &quot; &quot;;</span><br><span class="line">  clear: both</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="外边距叠加"><a href="#外边距叠加" class="headerlink" title="外边距叠加"></a>外边距叠加</h3><p>如果两个相邻元素都在其上设置外边距，并且两个外边距接触，则两个外边距中的较大者保留，较小的一个消失——这叫外边距折叠, 我们之前也遇到过。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://kangning1206.github.io/2015/01/30/css/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2016/06/20/dom/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          浏览器的DOM
+        
+      </div>
+    </a>
   
   
-    </div></section>
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -242,8 +426,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
