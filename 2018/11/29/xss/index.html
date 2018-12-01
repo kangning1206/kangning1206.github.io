@@ -1,4 +1,83 @@
-<!DOCTYPE html><html lang="zh-cn"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"><meta name="format-detection" content="telephone=no"><meta name="format-detection" content="email=no"><meta name="description"><meta name="keywords" content="Hexo, Gruntjs, Nodejs, Reactjs, Vuejs"><title>xss 攻击与防御 - 点滴</title><link rel="stylesheet" href="/css/main_style.min.css"><link rel="icon" href="/favicon.ico"></head><body><input id="navi" type="checkbox"><ul class="main-navication"><li><a href="/"><span>Home</span></a></li><li><a href="/archives"><span>归档</span></a></li></ul><div class="wrapper" id="wrap"><div class="post-header"><label class="navi-button light" for="navi">MENU</label><img class="background" src="http://callfiles.ueibo.com/hexo-theme-laughing/post_background.jpg"><div class="post-title"><h1 class="title">xss 攻击与防御</h1><ul class="meta"><li><i class="icon icon-author"></i></li><li><i class="icon icon-clock"></i>1 Minutes</li><li><i class="icon icon-calendar"></i>November 29, 2018</li></ul></div></div><div class="article-content" style="max-width:800px"><h2 id="XSS定义"><a href="#XSS定义" class="headerlink" title="XSS定义"></a>XSS定义</h2><p>跨站脚本攻击Cross-site scripting (XSS)是一种安全漏洞，攻击者可以利用这种漏洞在网站上注入恶意的客户端代码。当被攻击者登陆网站时就会自动运行这些恶意代码，从而，攻击者可以突破网站的访问权限，冒充受害者。</p>
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>xss 攻击与防御 | 点滴</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="XSS定义跨站脚本攻击Cross-site scripting (XSS)是一种安全漏洞，攻击者可以利用这种漏洞在网站上注入恶意的客户端代码。当被攻击者登陆网站时就会自动运行这些恶意代码，从而，攻击者可以突破网站的访问权限，冒充受害者。  简单点：用户访问网站时，浏览器上执行了不是网站作者意图的代码，而是一个捣乱者的意图，不受控作者控制了，那么捣乱者就可能会窃取访问者的信息；  危害 窃取用户的c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="xss 攻击与防御">
+<meta property="og:url" content="https://kangning1206.github.io/2018/11/29/xss/index.html">
+<meta property="og:site_name" content="点滴">
+<meta property="og:description" content="XSS定义跨站脚本攻击Cross-site scripting (XSS)是一种安全漏洞，攻击者可以利用这种漏洞在网站上注入恶意的客户端代码。当被攻击者登陆网站时就会自动运行这些恶意代码，从而，攻击者可以突破网站的访问权限，冒充受害者。  简单点：用户访问网站时，浏览器上执行了不是网站作者意图的代码，而是一个捣乱者的意图，不受控作者控制了，那么捣乱者就可能会窃取访问者的信息；  危害 窃取用户的c">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-11-29T01:12:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="xss 攻击与防御">
+<meta name="twitter:description" content="XSS定义跨站脚本攻击Cross-site scripting (XSS)是一种安全漏洞，攻击者可以利用这种漏洞在网站上注入恶意的客户端代码。当被攻击者登陆网站时就会自动运行这些恶意代码，从而，攻击者可以突破网站的访问权限，冒充受害者。  简单点：用户访问网站时，浏览器上执行了不是网站作者意图的代码，而是一个捣乱者的意图，不受控作者控制了，那么捣乱者就可能会窃取访问者的信息；  危害 窃取用户的c">
+  
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+</html>
+<body style="
+
+
+  background-color: #eff0f6
+
+">
+  <div id="container">
+    <nav id="nav">
+  <header class="header">
+    <a href="/" class="title">Clover Tuan</a>
+  </header>
+  <div class="ctnWrap">
+    <div class="icons">
+      
+        
+          
+            <a href="https://dribbble.com/clovertuan" target="_blank" class="nav-icn iconfont icon-dribbble"></a>
+          
+        
+          
+            <a href="https://www.behance.net/clovertuan" target="_blank" class="nav-icn iconfont icon-behance"></a>
+          
+        
+          
+            <a href="http://clovertuan.lofter.com/" target="_blank" class="nav-icn iconfont icon-lofter"></a>
+          
+        
+          
+            <a href="https://www.instagram.com/clovertuan/" target="_blank" class="nav-icn iconfont icon-instagram"></a>
+          
+        
+          
+            <a href="https://github.com/cloverTuan" target="_blank" class="nav-icn iconfont icon-github"></a>
+          
+        
+      
+    </div>
+    <div class="menu">
+      
+        
+            <a href="/" class="nav-menu ">HOME</a>
+          
+        
+            <a href="/archives" class="nav-menu ">ARCHIVE</a>
+          
+        
+            <a href="/about" class="nav-menu ">ABOUT</a>
+          
+        
+      
+    </div>
+  </div>
+</nav>
+    <div id="main"><section class="article">
+  <h2 class="title">xss 攻击与防御</h2>
+  <p class="sub">Nov 29, 2018</p>
+  <article class="content">
+    <h2 id="XSS定义"><a href="#XSS定义" class="headerlink" title="XSS定义"></a>XSS定义</h2><p>跨站脚本攻击Cross-site scripting (XSS)是一种安全漏洞，攻击者可以利用这种漏洞在网站上注入恶意的客户端代码。当被攻击者登陆网站时就会自动运行这些恶意代码，从而，攻击者可以突破网站的访问权限，冒充受害者。</p>
 <blockquote>
 <p>简单点：用户访问网站时，浏览器上执行了<code>不是网站作者意图</code>的代码，而是一个<code>捣乱者</code>的意图，不受控作者控制了，那么<code>捣乱者</code>就可能会窃取访问者的信息；</p>
 </blockquote>
@@ -18,16 +97,44 @@
 <p>从内容一致性原则看，第三种最好，文本输入框输入不做限制，也许用户输入标签和脚本 本来就是他的目的，比如技术帖子，正常的需求。但前段工程师在输出页面时必须 htmlEncode 编码输出页面，不给不法者运行环境；</p>
 </blockquote>
 <p>三种各有特点，使用场景不一样，比如第一种，业务需求是不允许输入特殊字符，服务器在存储前做校验，不通过时告知用户，只有符合规则了才给予了保存。</p>
-</div><div class="article-meta" style="max-width:800px"></div><div class="article-comment" style="max-width:800px"><div class="ds-thread" id="ds-thread" data-thread-key="cjp4wdfz400046do1wgufdg11" data-title="xss 攻击与防御" data-url="https://kangning1206.github.io/2018/11/29/xss/" site-name="ueibo"></div><script>var siteName = document.getElementById('ds-thread').getAttribute('site-name');
-var duoshuoQuery = {short_name: siteName};
-(function() {
-  var ds = document.createElement('script');
-  ds.type = 'text/javascript';ds.async = true;
-  ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-  ds.charset = 'UTF-8';
-  (document.getElementsByTagName('head')[0] 
-  || document.getElementsByTagName('body')[0]).appendChild(ds);
-})();</script></div><ul class="navication"><li class="home"><a href="/"><i class="icon icon-home"></i></a></li><li><a href="/2018/11/29/axios/"><i class="icon icon-arror-left"></i></a></li><li><a href="/2018/11/28/dom/"><i class="icon icon-arror-right"></i></a></li></ul><div class="page-footer"><!-- .top--><!--   ul.social--><!--     each social in theme.social--><!--       li--><!--         a(href=social.link, title=social.name, target="_blank")--><!--           i(class="icon icon-" + social.icon)--><div class="bottom"><p class="copyright">© 2018 点滴<br><small>POWER BY <a href="https://hexo.io" target="_blank">HEXO</a></small><small>, THEME BY <a href="https://github.com/BoizZ/hexo-theme-laughing" target="_blank">LAUGHING</a></small></p></div></div></div><script>var wrap = document.getElementById('wrap');
-window.onload = function () {
-  wrap.className += ' done';
-}</script></body></html>
+
+  </article>
+  <footer class="f-cf">
+    
+      <a href="/2018/11/29/axios/" class="link f-fl">⟵axios遇到OPTIONS请求</a>
+    
+    
+      <a href="/2018/11/28/dom/" class="link f-fr">浏览器的DOM⟶</a>
+    
+  </footer>
+</section></div>
+    <footer id="footer" class="f-cf">
+  d.guangying@foxmail.com
+  
+    
+      
+        · <a href="https://dribbble.com/clovertuan" target="_blank" class="nav-icn">Dribbble</a>
+      
+    
+      
+        · <a href="https://www.behance.net/clovertuan" target="_blank" class="nav-icn">Behance</a>
+      
+    
+      
+        · <a href="http://clovertuan.lofter.com/" target="_blank" class="nav-icn">Lofter</a>
+      
+    
+      
+        · <a href="https://www.instagram.com/clovertuan/" target="_blank" class="nav-icn">Instagram</a>
+      
+    
+      
+        · <a href="https://github.com/cloverTuan" target="_blank" class="nav-icn">GitHub</a>
+      
+    
+  
+  <span class="copyright">All rights reserved @Clover Tuan</span>
+</footer>
+  </div>
+</body>
+</html>
