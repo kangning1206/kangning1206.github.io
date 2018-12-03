@@ -3,58 +3,85 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  
-  
+  <title>浏览器的DOM | 点滴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>
-    浏览器的DOM |
-    
-    点滴</title>
+  <meta name="description" content="DOM解析器的输出“解析树”是由 DOM 元素和属性节点构成的树结构。DOM 是文档对象模型 (Document Object Model) 的缩写。它是 HTML 文档的对象表示，同时也是外部内容（例如 JavaScript）与 HTML 元素之间的接口。解析树的根节点是“Document”对象。 DOM 与标记之间几乎是一一对应的关系。比如下面这段标记 12345678&amp;lt;html&amp;gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浏览器的DOM">
+<meta property="og:url" content="https://kangning1206.github.io/2016/06/20/dom/index.html">
+<meta property="og:site_name" content="点滴">
+<meta property="og:description" content="DOM解析器的输出“解析树”是由 DOM 元素和属性节点构成的树结构。DOM 是文档对象模型 (Document Object Model) 的缩写。它是 HTML 文档的对象表示，同时也是外部内容（例如 JavaScript）与 HTML 元素之间的接口。解析树的根节点是“Document”对象。 DOM 与标记之间几乎是一一对应的关系。比如下面这段标记 12345678&amp;lt;html&amp;gt;">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/image015.png">
+<meta property="og:image" content="https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/image025.png">
+<meta property="og:image" content="https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/webkitflow.png">
+<meta property="og:updated_time" content="2018-12-01T10:14:25.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="浏览器的DOM">
+<meta name="twitter:description" content="DOM解析器的输出“解析树”是由 DOM 元素和属性节点构成的树结构。DOM 是文档对象模型 (Document Object Model) 的缩写。它是 HTML 文档的对象表示，同时也是外部内容（例如 JavaScript）与 HTML 元素之间的接口。解析树的根节点是“Document”对象。 DOM 与标记之间几乎是一一对应的关系。比如下面这段标记 12345678&amp;lt;html&amp;gt;">
+<meta name="twitter:image" content="https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/image015.png">
   
-    <link rel="shortcut icon" href="/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
-    <link rel="alternate" href="/atom.xml" title="点滴" type="application/atom+xml">
-  
-  
-    <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-  
-  <script src="/js/pace.min.js"></script>
+  <link rel="stylesheet" href="/css/index.css">
 </head>
 </html>
-<body>
-<main class="content">
-  <section class="outer">
-  <article id="post-dom" class="article article-type-post" itemscope="" itemprop="blogPost">
+<body style="
 
-  <div class="article-inner">
-    
-      <header class="article-header">
+
+  background-color: #eff0f6
+
+">
+  <div id="container">
+    <nav id="nav">
+  <header class="header">
+    <a href="/" class="title">Clover Tuan</a>
+  </header>
+  <div class="ctnWrap">
+    <div class="icons">
+      
         
-  
-    <h1 class="article-title" itemprop="name">
-      浏览器的DOM
-    </h1>
-  
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2016/06/20/dom/" class="article-date">
-  <time datetime="2016-06-20T02:58:22.000Z" itemprop="datePublished">2016-06-20</time>
-</a>
+          
+            <a href="https://dribbble.com/clovertuan" target="_blank" class="nav-icn iconfont icon-dribbble"></a>
+          
         
-      </div>
-    
-
-    <div class="article-entry" itemprop="articleBody">
+          
+            <a href="https://www.behance.net/clovertuan" target="_blank" class="nav-icn iconfont icon-behance"></a>
+          
+        
+          
+            <a href="http://clovertuan.lofter.com/" target="_blank" class="nav-icn iconfont icon-lofter"></a>
+          
+        
+          
+            <a href="https://www.instagram.com/clovertuan/" target="_blank" class="nav-icn iconfont icon-instagram"></a>
+          
+        
+          
+            <a href="https://github.com/cloverTuan" target="_blank" class="nav-icn iconfont icon-github"></a>
+          
+        
       
+    </div>
+    <div class="menu">
       
+        
+            <a href="/" class="nav-menu ">HOME</a>
+          
+        
+            <a href="/archives" class="nav-menu ">ARCHIVE</a>
+          
+        
+            <a href="/about" class="nav-menu ">ABOUT</a>
+          
+        
       
-        <h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><p>解析器的输出“解析树”是由 DOM 元素和属性节点构成的树结构。DOM 是文档对象模型 (Document Object Model) 的缩写。它是 HTML 文档的对象表示，同时也是外部内容（例如 JavaScript）与 HTML 元素之间的接口。<br>解析树的根节点是“Document”对象。</p>
+    </div>
+  </div>
+</nav>
+    <div id="main"><section class="article">
+  <h2 class="title">浏览器的DOM</h2>
+  <p class="sub">6月 20, 2016</p>
+  <article class="content">
+    <h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><p>解析器的输出“解析树”是由 DOM 元素和属性节点构成的树结构。DOM 是文档对象模型 (Document Object Model) 的缩写。它是 HTML 文档的对象表示，同时也是外部内容（例如 JavaScript）与 HTML 元素之间的接口。<br>解析树的根节点是“Document”对象。</p>
 <p>DOM 与标记之间几乎是一一对应的关系。比如下面这段标记</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">      Hello World</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span> <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"example.png"</span>/&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>可翻译成如下的 DOM 树：</p>
@@ -135,121 +162,43 @@
 <p>以上是用户体验最好的加载顺序；<br>资源请求下载是异步的，不会被阻塞；<br>js和css相互阻塞的是执行、执行、执行；</p>
 </blockquote>
 
+  </article>
+  <footer class="f-cf">
+    
+      <a href="/2016/08/15/xss/" class="link f-fl">⟵xss 攻击与防御</a>
+    
+    
+      <a href="/2015/10/12/prototype/" class="link f-fr">prototype⟶</a>
+    
+  </footer>
+</section></div>
+    <footer id="footer" class="f-cf">
+  d.guangying@foxmail.com
+  
+    
       
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kangning1206.github.io/2016/06/20/dom/" data-id="cjp89btqm0007zvo17o29xqck" class="article-share-link">Share</a>
+        · <a href="https://dribbble.com/clovertuan" target="_blank" class="nav-icn">Dribbble</a>
       
-    </footer>
-  </div>
-
+    
+      
+        · <a href="https://www.behance.net/clovertuan" target="_blank" class="nav-icn">Behance</a>
+      
+    
+      
+        · <a href="http://clovertuan.lofter.com/" target="_blank" class="nav-icn">Lofter</a>
+      
+    
+      
+        · <a href="https://www.instagram.com/clovertuan/" target="_blank" class="nav-icn">Instagram</a>
+      
+    
+      
+        · <a href="https://github.com/cloverTuan" target="_blank" class="nav-icn">GitHub</a>
+      
+    
   
-    
-  <nav class="article-nav">
-    
-      <a href="/2016/08/15/xss/" class="article-nav-link">
-        <strong class="article-nav-caption">Newer posts</strong>
-        <div class="article-nav-title">
-          
-            xss 攻击与防御
-          
-        </div>
-      </a>
-    
-    
-      <a href="/2015/10/12/prototype/" class="article-nav-link">
-        <strong class="article-nav-caption">Olde posts</strong>
-        <div class="article-nav-title">prototype</div>
-      </a>
-    
-  </nav>
-
-
-  
-
-</article>
-
-
-
-</section>
-  <footer class="footer">
-  
-  <div class="outer">
-    <ul class="list-inline">
-      <li>&copy; 2018 点滴</li>
-      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
-      <li>Theme  <a href="https://zhwangart.github.io">zhwangart</a></li>
-    </ul>
-  </div>
+  <span class="copyright">All rights reserved @Clover Tuan</span>
 </footer>
-</main>
-<aside class="sidebar">
-  <button class="navbar-toggle"></button>
-
-<nav class="navbar">
-  
-    <div class="logo">
-      <a href="/"><img src="/images/hexo.svg" alt="点滴"></a>
-    </div>
-  
-  <ul class="nav nav-main">
-    
-      <li class="nav-item">
-        <a class="nav-item-link" href="/">Home</a>
-      </li>
-    
-      <li class="nav-item">
-        <a class="nav-item-link" href="/archives">Archives</a>
-      </li>
-    
-      <li class="nav-item">
-        <a class="nav-item-link" href="/gallery">Gallery</a>
-      </li>
-    
-      <li class="nav-item">
-        <a class="nav-item-link" href="/about">About</a>
-      </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link nav-item-search" title="搜索">
-        <i class="fe fe-search"></i>
-        Search
-      </a>
-    </li>
-  </ul>
-</nav>
-
-<nav class="navbar navbar-bottom">
-  <ul class="nav">
-    <li class="nav-item">
-      
-        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
-          <i class="fe fe-feed"></i>
-        </a>
-      
-    </li>
-  </ul>
-</nav>
-
-<div class="search-form-wrap">
-  <div class="local-search local-search-plugin">
-  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
-  <div id="local-search-result" class="local-search-result"></div>
-</div>
-</div>
-</aside>
-<script src="/js/jquery-2.0.3.min.js"></script>
-<script src="/js/lazyload.min.js"></script>
-
-
-  <script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-  <script src="/js/search.js"></script>
-
-
-<script src="/js/ocean.js"></script>
-
+  </div>
 </body>
 </html>

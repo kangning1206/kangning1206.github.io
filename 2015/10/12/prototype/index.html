@@ -3,58 +3,82 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  
-  
+  <title>prototype | 点滴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>
-    prototype |
-    
-    点滴</title>
+  <meta name="description" content="JavaScript 常被描述为一种基于原型的语言 (prototype-based language)——每个对象拥有一个原型对象，对象以其原型为模板、从原型继承方法和属性。原型对象也可能拥有原型，并从中继承方法和属性，一层一层、以此类推。这种关系常被称为原型链 (prototype chain)，它解释了为何一个对象会拥有定义在其他对象中的属性和方法。 javascript 创建对象 方式1手">
+<meta name="keywords" content="javascript 继承">
+<meta property="og:type" content="article">
+<meta property="og:title" content="prototype">
+<meta property="og:url" content="https://kangning1206.github.io/2015/10/12/prototype/index.html">
+<meta property="og:site_name" content="点滴">
+<meta property="og:description" content="JavaScript 常被描述为一种基于原型的语言 (prototype-based language)——每个对象拥有一个原型对象，对象以其原型为模板、从原型继承方法和属性。原型对象也可能拥有原型，并从中继承方法和属性，一层一层、以此类推。这种关系常被称为原型链 (prototype chain)，它解释了为何一个对象会拥有定义在其他对象中的属性和方法。 javascript 创建对象 方式1手">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-03T01:02:11.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="prototype">
+<meta name="twitter:description" content="JavaScript 常被描述为一种基于原型的语言 (prototype-based language)——每个对象拥有一个原型对象，对象以其原型为模板、从原型继承方法和属性。原型对象也可能拥有原型，并从中继承方法和属性，一层一层、以此类推。这种关系常被称为原型链 (prototype chain)，它解释了为何一个对象会拥有定义在其他对象中的属性和方法。 javascript 创建对象 方式1手">
   
-    <link rel="shortcut icon" href="/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
-    <link rel="alternate" href="/atom.xml" title="点滴" type="application/atom+xml">
-  
-  
-    <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-  
-  <script src="/js/pace.min.js"></script>
+  <link rel="stylesheet" href="/css/index.css">
 </head>
 </html>
-<body>
-<main class="content">
-  <section class="outer">
-  <article id="post-prototype" class="article article-type-post" itemscope="" itemprop="blogPost">
+<body style="
 
-  <div class="article-inner">
-    
-      <header class="article-header">
+
+  background-color: #eff0f6
+
+">
+  <div id="container">
+    <nav id="nav">
+  <header class="header">
+    <a href="/" class="title">Clover Tuan</a>
+  </header>
+  <div class="ctnWrap">
+    <div class="icons">
+      
         
-  
-    <h1 class="article-title" itemprop="name">
-      prototype
-    </h1>
-  
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2015/10/12/prototype/" class="article-date">
-  <time datetime="2015-10-12T08:46:49.000Z" itemprop="datePublished">2015-10-12</time>
-</a>
+          
+            <a href="https://dribbble.com/clovertuan" target="_blank" class="nav-icn iconfont icon-dribbble"></a>
+          
         
-      </div>
-    
-
-    <div class="article-entry" itemprop="articleBody">
+          
+            <a href="https://www.behance.net/clovertuan" target="_blank" class="nav-icn iconfont icon-behance"></a>
+          
+        
+          
+            <a href="http://clovertuan.lofter.com/" target="_blank" class="nav-icn iconfont icon-lofter"></a>
+          
+        
+          
+            <a href="https://www.instagram.com/clovertuan/" target="_blank" class="nav-icn iconfont icon-instagram"></a>
+          
+        
+          
+            <a href="https://github.com/cloverTuan" target="_blank" class="nav-icn iconfont icon-github"></a>
+          
+        
       
+    </div>
+    <div class="menu">
       
+        
+            <a href="/" class="nav-menu ">HOME</a>
+          
+        
+            <a href="/archives" class="nav-menu ">ARCHIVE</a>
+          
+        
+            <a href="/about" class="nav-menu ">ABOUT</a>
+          
+        
       
-        <p>JavaScript 常被描述为一种基于原型的语言 (prototype-based language)——<code>每个对象拥有一个原型对象</code>，对象以其原型为<code>模板</code>、从原型<code>继承方法和属性</code>。原型对象也可能拥有原型，并从中继承方法和属性，一层一层、以此类推。这种关系常被称为原型链 (prototype chain)，它解释了为何一个对象会拥有定义在其他对象中的属性和方法。</p>
+    </div>
+  </div>
+</nav>
+    <div id="main"><section class="article">
+  <h2 class="title">prototype</h2>
+  <p class="sub">10月 12, 2015</p>
+  <article class="content">
+    <p>JavaScript 常被描述为一种基于原型的语言 (prototype-based language)——<code>每个对象拥有一个原型对象</code>，对象以其原型为<code>模板</code>、从原型<code>继承方法和属性</code>。原型对象也可能拥有原型，并从中继承方法和属性，一层一层、以此类推。这种关系常被称为原型链 (prototype chain)，它解释了为何一个对象会拥有定义在其他对象中的属性和方法。</p>
 <p>javascript 创建对象</p>
 <h2 id="方式1"><a href="#方式1" class="headerlink" title="方式1"></a>方式1</h2><p>手工作坊，生成的对象看似一致，实际是没有任何关系的，且生成效率很低；</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var mycar = &#123;</span><br><span class="line">  name : &apos;BMW&apos;,</span><br><span class="line">  color: &apos;black&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -103,123 +127,43 @@
 <p>浏览器首先检查，person1 对象是否具有可用的 valueOf() 方法。<br>如果没有，则浏览器检查 person1 对象的原型对象（即 Person构造函数的prototype属性所指向的对象）是否具有可用的 valueof() 方法。<br>如果也没有，则浏览器检查 Person() 构造函数的prototype属性所指向的对象的原型对象（即 Object构造函数的prototype属性所指向的对象）是否具有可用的 valueOf() 方法。这里有这个方法，于是该方法被调用。</p>
 <p><a href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/Object_prototypes" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/Object_prototypes</a></p>
 
+  </article>
+  <footer class="f-cf">
+    
+      <a href="/2016/06/20/dom/" class="link f-fl">⟵浏览器的DOM</a>
+    
+    
+      <a href="/2015/01/30/css/" class="link f-fr">css⟶</a>
+    
+  </footer>
+</section></div>
+    <footer id="footer" class="f-cf">
+  d.guangying@foxmail.com
+  
+    
       
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kangning1206.github.io/2015/10/12/prototype/" data-id="cjp89btqs000bzvo1hflyvk41" class="article-share-link">Share</a>
+        · <a href="https://dribbble.com/clovertuan" target="_blank" class="nav-icn">Dribbble</a>
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript-继承/">javascript 继承</a></li></ul>
-
-    </footer>
-  </div>
-
+    
+      
+        · <a href="https://www.behance.net/clovertuan" target="_blank" class="nav-icn">Behance</a>
+      
+    
+      
+        · <a href="http://clovertuan.lofter.com/" target="_blank" class="nav-icn">Lofter</a>
+      
+    
+      
+        · <a href="https://www.instagram.com/clovertuan/" target="_blank" class="nav-icn">Instagram</a>
+      
+    
+      
+        · <a href="https://github.com/cloverTuan" target="_blank" class="nav-icn">GitHub</a>
+      
+    
   
-    
-  <nav class="article-nav">
-    
-      <a href="/2016/06/20/dom/" class="article-nav-link">
-        <strong class="article-nav-caption">Newer posts</strong>
-        <div class="article-nav-title">
-          
-            浏览器的DOM
-          
-        </div>
-      </a>
-    
-    
-      <a href="/2015/01/30/css/" class="article-nav-link">
-        <strong class="article-nav-caption">Olde posts</strong>
-        <div class="article-nav-title">css</div>
-      </a>
-    
-  </nav>
-
-
-  
-
-</article>
-
-
-
-</section>
-  <footer class="footer">
-  
-  <div class="outer">
-    <ul class="list-inline">
-      <li>&copy; 2018 点滴</li>
-      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
-      <li>Theme  <a href="https://zhwangart.github.io">zhwangart</a></li>
-    </ul>
-  </div>
+  <span class="copyright">All rights reserved @Clover Tuan</span>
 </footer>
-</main>
-<aside class="sidebar">
-  <button class="navbar-toggle"></button>
-
-<nav class="navbar">
-  
-    <div class="logo">
-      <a href="/"><img src="/images/hexo.svg" alt="点滴"></a>
-    </div>
-  
-  <ul class="nav nav-main">
-    
-      <li class="nav-item">
-        <a class="nav-item-link" href="/">Home</a>
-      </li>
-    
-      <li class="nav-item">
-        <a class="nav-item-link" href="/archives">Archives</a>
-      </li>
-    
-      <li class="nav-item">
-        <a class="nav-item-link" href="/gallery">Gallery</a>
-      </li>
-    
-      <li class="nav-item">
-        <a class="nav-item-link" href="/about">About</a>
-      </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link nav-item-search" title="搜索">
-        <i class="fe fe-search"></i>
-        Search
-      </a>
-    </li>
-  </ul>
-</nav>
-
-<nav class="navbar navbar-bottom">
-  <ul class="nav">
-    <li class="nav-item">
-      
-        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
-          <i class="fe fe-feed"></i>
-        </a>
-      
-    </li>
-  </ul>
-</nav>
-
-<div class="search-form-wrap">
-  <div class="local-search local-search-plugin">
-  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
-  <div id="local-search-result" class="local-search-result"></div>
-</div>
-</div>
-</aside>
-<script src="/js/jquery-2.0.3.min.js"></script>
-<script src="/js/lazyload.min.js"></script>
-
-
-  <script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-  <script src="/js/search.js"></script>
-
-
-<script src="/js/ocean.js"></script>
-
+  </div>
 </body>
 </html>

@@ -3,58 +3,81 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  
-  
+  <title>性能优化 | 点滴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>
-    性能优化 |
-    
-    点滴</title>
+  <meta name="description" content="浏览器 缓存，如localStorage 预加载  利用link rel=”preload” 提前下载，但并不会阻塞页面渲染；as属性 设置加载的媒体类型；12&amp;lt;link rel=&amp;quot;preload&amp;quot; href=&amp;quot;style.css&amp;quot; as=&amp;quot;style&amp;quot;&amp;gt;&amp;lt;link rel=&amp;quot;preload&amp;quot; hre">
+<meta property="og:type" content="article">
+<meta property="og:title" content="性能优化">
+<meta property="og:url" content="https://kangning1206.github.io/2017/04/23/performance/index.html">
+<meta property="og:site_name" content="点滴">
+<meta property="og:description" content="浏览器 缓存，如localStorage 预加载  利用link rel=”preload” 提前下载，但并不会阻塞页面渲染；as属性 设置加载的媒体类型；12&amp;lt;link rel=&amp;quot;preload&amp;quot; href=&amp;quot;style.css&amp;quot; as=&amp;quot;style&amp;quot;&amp;gt;&amp;lt;link rel=&amp;quot;preload&amp;quot; hre">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-01T09:44:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="性能优化">
+<meta name="twitter:description" content="浏览器 缓存，如localStorage 预加载  利用link rel=”preload” 提前下载，但并不会阻塞页面渲染；as属性 设置加载的媒体类型；12&amp;lt;link rel=&amp;quot;preload&amp;quot; href=&amp;quot;style.css&amp;quot; as=&amp;quot;style&amp;quot;&amp;gt;&amp;lt;link rel=&amp;quot;preload&amp;quot; hre">
   
-    <link rel="shortcut icon" href="/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
-    <link rel="alternate" href="/atom.xml" title="点滴" type="application/atom+xml">
-  
-  
-    <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-  
-  <script src="/js/pace.min.js"></script>
+  <link rel="stylesheet" href="/css/index.css">
 </head>
 </html>
-<body>
-<main class="content">
-  <section class="outer">
-  <article id="post-performance" class="article article-type-post" itemscope="" itemprop="blogPost">
+<body style="
 
-  <div class="article-inner">
-    
-      <header class="article-header">
+
+  background-color: #eff0f6
+
+">
+  <div id="container">
+    <nav id="nav">
+  <header class="header">
+    <a href="/" class="title">Clover Tuan</a>
+  </header>
+  <div class="ctnWrap">
+    <div class="icons">
+      
         
-  
-    <h1 class="article-title" itemprop="name">
-      性能优化
-    </h1>
-  
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2017/04/23/performance/" class="article-date">
-  <time datetime="2017-04-23T02:35:53.000Z" itemprop="datePublished">2017-04-23</time>
-</a>
+          
+            <a href="https://dribbble.com/clovertuan" target="_blank" class="nav-icn iconfont icon-dribbble"></a>
+          
         
-      </div>
-    
-
-    <div class="article-entry" itemprop="articleBody">
+          
+            <a href="https://www.behance.net/clovertuan" target="_blank" class="nav-icn iconfont icon-behance"></a>
+          
+        
+          
+            <a href="http://clovertuan.lofter.com/" target="_blank" class="nav-icn iconfont icon-lofter"></a>
+          
+        
+          
+            <a href="https://www.instagram.com/clovertuan/" target="_blank" class="nav-icn iconfont icon-instagram"></a>
+          
+        
+          
+            <a href="https://github.com/cloverTuan" target="_blank" class="nav-icn iconfont icon-github"></a>
+          
+        
       
+    </div>
+    <div class="menu">
       
+        
+            <a href="/" class="nav-menu ">HOME</a>
+          
+        
+            <a href="/archives" class="nav-menu ">ARCHIVE</a>
+          
+        
+            <a href="/about" class="nav-menu ">ABOUT</a>
+          
+        
       
-        <h2 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h2><ul>
+    </div>
+  </div>
+</nav>
+    <div id="main"><section class="article">
+  <h2 class="title">性能优化</h2>
+  <p class="sub">4月 23, 2017</p>
+  <article class="content">
+    <h2 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h2><ul>
 <li>缓存，如localStorage</li>
 <li>预加载</li>
 </ul>
@@ -93,121 +116,43 @@
 <li>勿用css表达式；</li>
 </ul>
 
+  </article>
+  <footer class="f-cf">
+    
+      <a href="/2017/06/09/axios/" class="link f-fl">⟵axios遇到OPTIONS请求</a>
+    
+    
+      <a href="/2016/08/15/xss/" class="link f-fr">xss 攻击与防御⟶</a>
+    
+  </footer>
+</section></div>
+    <footer id="footer" class="f-cf">
+  d.guangying@foxmail.com
+  
+    
       
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kangning1206.github.io/2017/04/23/performance/" data-id="cjp89btqq000azvo1kxmkq6ak" class="article-share-link">Share</a>
+        · <a href="https://dribbble.com/clovertuan" target="_blank" class="nav-icn">Dribbble</a>
       
-    </footer>
-  </div>
-
+    
+      
+        · <a href="https://www.behance.net/clovertuan" target="_blank" class="nav-icn">Behance</a>
+      
+    
+      
+        · <a href="http://clovertuan.lofter.com/" target="_blank" class="nav-icn">Lofter</a>
+      
+    
+      
+        · <a href="https://www.instagram.com/clovertuan/" target="_blank" class="nav-icn">Instagram</a>
+      
+    
+      
+        · <a href="https://github.com/cloverTuan" target="_blank" class="nav-icn">GitHub</a>
+      
+    
   
-    
-  <nav class="article-nav">
-    
-      <a href="/2017/06/09/axios/" class="article-nav-link">
-        <strong class="article-nav-caption">Newer posts</strong>
-        <div class="article-nav-title">
-          
-            axios遇到OPTIONS请求
-          
-        </div>
-      </a>
-    
-    
-      <a href="/2016/08/15/xss/" class="article-nav-link">
-        <strong class="article-nav-caption">Olde posts</strong>
-        <div class="article-nav-title">xss 攻击与防御</div>
-      </a>
-    
-  </nav>
-
-
-  
-
-</article>
-
-
-
-</section>
-  <footer class="footer">
-  
-  <div class="outer">
-    <ul class="list-inline">
-      <li>&copy; 2018 点滴</li>
-      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
-      <li>Theme  <a href="https://zhwangart.github.io">zhwangart</a></li>
-    </ul>
-  </div>
+  <span class="copyright">All rights reserved @Clover Tuan</span>
 </footer>
-</main>
-<aside class="sidebar">
-  <button class="navbar-toggle"></button>
-
-<nav class="navbar">
-  
-    <div class="logo">
-      <a href="/"><img src="/images/hexo.svg" alt="点滴"></a>
-    </div>
-  
-  <ul class="nav nav-main">
-    
-      <li class="nav-item">
-        <a class="nav-item-link" href="/">Home</a>
-      </li>
-    
-      <li class="nav-item">
-        <a class="nav-item-link" href="/archives">Archives</a>
-      </li>
-    
-      <li class="nav-item">
-        <a class="nav-item-link" href="/gallery">Gallery</a>
-      </li>
-    
-      <li class="nav-item">
-        <a class="nav-item-link" href="/about">About</a>
-      </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link nav-item-search" title="搜索">
-        <i class="fe fe-search"></i>
-        Search
-      </a>
-    </li>
-  </ul>
-</nav>
-
-<nav class="navbar navbar-bottom">
-  <ul class="nav">
-    <li class="nav-item">
-      
-        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
-          <i class="fe fe-feed"></i>
-        </a>
-      
-    </li>
-  </ul>
-</nav>
-
-<div class="search-form-wrap">
-  <div class="local-search local-search-plugin">
-  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
-  <div id="local-search-result" class="local-search-result"></div>
-</div>
-</div>
-</aside>
-<script src="/js/jquery-2.0.3.min.js"></script>
-<script src="/js/lazyload.min.js"></script>
-
-
-  <script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-  <script src="/js/search.js"></script>
-
-
-<script src="/js/ocean.js"></script>
-
+  </div>
 </body>
 </html>

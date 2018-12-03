@@ -3,58 +3,81 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  
-  
+  <title>BFC | 点滴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>
-    BFC |
-    
-    点滴</title>
+  <meta name="description" content="块格式化上下文（Block Formatting Context，BFC） 是Web页面的可视化CSS渲染的一部分，是布局过程中生成块级盒子的区域，也是浮动元素与其他元素的交互限定区域。 块格式化上下文包含创建它的元素内部的所有内容. BFC可以解决盒子塌陷； 下列方式会创建块格式化上下文：  根元素或包含根元素的元素 浮动元素（元素的 float 不是 none） 绝对定位元素（元素的 posi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BFC">
+<meta property="og:url" content="https://kangning1206.github.io/2018/12/03/BFC/index.html">
+<meta property="og:site_name" content="点滴">
+<meta property="og:description" content="块格式化上下文（Block Formatting Context，BFC） 是Web页面的可视化CSS渲染的一部分，是布局过程中生成块级盒子的区域，也是浮动元素与其他元素的交互限定区域。 块格式化上下文包含创建它的元素内部的所有内容. BFC可以解决盒子塌陷； 下列方式会创建块格式化上下文：  根元素或包含根元素的元素 浮动元素（元素的 float 不是 none） 绝对定位元素（元素的 posi">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-03T03:41:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="BFC">
+<meta name="twitter:description" content="块格式化上下文（Block Formatting Context，BFC） 是Web页面的可视化CSS渲染的一部分，是布局过程中生成块级盒子的区域，也是浮动元素与其他元素的交互限定区域。 块格式化上下文包含创建它的元素内部的所有内容. BFC可以解决盒子塌陷； 下列方式会创建块格式化上下文：  根元素或包含根元素的元素 浮动元素（元素的 float 不是 none） 绝对定位元素（元素的 posi">
   
-    <link rel="shortcut icon" href="/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
-    <link rel="alternate" href="/atom.xml" title="点滴" type="application/atom+xml">
-  
-  
-    <link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-  
-  <script src="/js/pace.min.js"></script>
+  <link rel="stylesheet" href="/css/index.css">
 </head>
 </html>
-<body>
-<main class="content">
-  <section class="outer">
-  <article id="post-BFC" class="article article-type-post" itemscope="" itemprop="blogPost">
+<body style="
 
-  <div class="article-inner">
-    
-      <header class="article-header">
+
+  background-color: #eff0f6
+
+">
+  <div id="container">
+    <nav id="nav">
+  <header class="header">
+    <a href="/" class="title">Clover Tuan</a>
+  </header>
+  <div class="ctnWrap">
+    <div class="icons">
+      
         
-  
-    <h1 class="article-title" itemprop="name">
-      BFC
-    </h1>
-  
-
-      </header>
-    
-
-    
-      <div class="article-meta">
-        <a href="/2018/12/03/BFC/" class="article-date">
-  <time datetime="2018-12-03T03:17:05.000Z" itemprop="datePublished">2018-12-03</time>
-</a>
+          
+            <a href="https://dribbble.com/clovertuan" target="_blank" class="nav-icn iconfont icon-dribbble"></a>
+          
         
-      </div>
-    
-
-    <div class="article-entry" itemprop="articleBody">
+          
+            <a href="https://www.behance.net/clovertuan" target="_blank" class="nav-icn iconfont icon-behance"></a>
+          
+        
+          
+            <a href="http://clovertuan.lofter.com/" target="_blank" class="nav-icn iconfont icon-lofter"></a>
+          
+        
+          
+            <a href="https://www.instagram.com/clovertuan/" target="_blank" class="nav-icn iconfont icon-instagram"></a>
+          
+        
+          
+            <a href="https://github.com/cloverTuan" target="_blank" class="nav-icn iconfont icon-github"></a>
+          
+        
       
+    </div>
+    <div class="menu">
       
+        
+            <a href="/" class="nav-menu ">HOME</a>
+          
+        
+            <a href="/archives" class="nav-menu ">ARCHIVE</a>
+          
+        
+            <a href="/about" class="nav-menu ">ABOUT</a>
+          
+        
       
-        <p>块格式化上下文（Block Formatting Context，BFC） 是Web页面的可视化CSS渲染的一部分，是布局过程中生成块级盒子的区域，也是浮动元素与其他元素的交互限定区域。</p>
+    </div>
+  </div>
+</nav>
+    <div id="main"><section class="article">
+  <h2 class="title">BFC</h2>
+  <p class="sub">12月 3, 2018</p>
+  <article class="content">
+    <p>块格式化上下文（Block Formatting Context，BFC） 是Web页面的可视化CSS渲染的一部分，是布局过程中生成块级盒子的区域，也是浮动元素与其他元素的交互限定区域。</p>
 <p><code>块格式化上下文包含创建它的元素内部的所有内容.</code> BFC可以解决盒子塌陷；</p>
 <p>下列方式会创建块格式化上下文：</p>
 <ul>
@@ -75,121 +98,43 @@
 </ul>
 <p>块格式化上下文对浮动定位（参见 float）与清除浮动（参见 clear）都很重要。浮动定位和清除浮动时只会应用于同一个BFC内的元素。浮动不会影响其它BFC中元素的布局，而清除浮动只能清除同一BFC中在它前面的元素的浮动。外边距折叠（Margin collapsing）也只会发生在属于同一BFC的块级元素之间。</p>
 
+  </article>
+  <footer class="f-cf">
+    
+      <a href="/2018/12/03/css-box/" class="link f-fl">⟵css-box 盒子塌陷</a>
+    
+    
+      <a href="/2018/12/01/htmlTempleate/" class="link f-fr">htmlTempleate⟶</a>
+    
+  </footer>
+</section></div>
+    <footer id="footer" class="f-cf">
+  d.guangying@foxmail.com
+  
+    
       
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kangning1206.github.io/2018/12/03/BFC/" data-id="cjp89btq30000zvo1ub33svye" class="article-share-link">Share</a>
+        · <a href="https://dribbble.com/clovertuan" target="_blank" class="nav-icn">Dribbble</a>
       
-    </footer>
-  </div>
-
+    
+      
+        · <a href="https://www.behance.net/clovertuan" target="_blank" class="nav-icn">Behance</a>
+      
+    
+      
+        · <a href="http://clovertuan.lofter.com/" target="_blank" class="nav-icn">Lofter</a>
+      
+    
+      
+        · <a href="https://www.instagram.com/clovertuan/" target="_blank" class="nav-icn">Instagram</a>
+      
+    
+      
+        · <a href="https://github.com/cloverTuan" target="_blank" class="nav-icn">GitHub</a>
+      
+    
   
-    
-  <nav class="article-nav">
-    
-      <a href="/2018/12/03/css-box/" class="article-nav-link">
-        <strong class="article-nav-caption">Newer posts</strong>
-        <div class="article-nav-title">
-          
-            css-box 盒子塌陷
-          
-        </div>
-      </a>
-    
-    
-      <a href="/2018/12/01/htmlTempleate/" class="article-nav-link">
-        <strong class="article-nav-caption">Olde posts</strong>
-        <div class="article-nav-title">htmlTempleate</div>
-      </a>
-    
-  </nav>
-
-
-  
-
-</article>
-
-
-
-</section>
-  <footer class="footer">
-  
-  <div class="outer">
-    <ul class="list-inline">
-      <li>&copy; 2018 点滴</li>
-      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
-      <li>Theme  <a href="https://zhwangart.github.io">zhwangart</a></li>
-    </ul>
-  </div>
+  <span class="copyright">All rights reserved @Clover Tuan</span>
 </footer>
-</main>
-<aside class="sidebar">
-  <button class="navbar-toggle"></button>
-
-<nav class="navbar">
-  
-    <div class="logo">
-      <a href="/"><img src="/images/hexo.svg" alt="点滴"></a>
-    </div>
-  
-  <ul class="nav nav-main">
-    
-      <li class="nav-item">
-        <a class="nav-item-link" href="/">Home</a>
-      </li>
-    
-      <li class="nav-item">
-        <a class="nav-item-link" href="/archives">Archives</a>
-      </li>
-    
-      <li class="nav-item">
-        <a class="nav-item-link" href="/gallery">Gallery</a>
-      </li>
-    
-      <li class="nav-item">
-        <a class="nav-item-link" href="/about">About</a>
-      </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link nav-item-search" title="搜索">
-        <i class="fe fe-search"></i>
-        Search
-      </a>
-    </li>
-  </ul>
-</nav>
-
-<nav class="navbar navbar-bottom">
-  <ul class="nav">
-    <li class="nav-item">
-      
-        <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
-          <i class="fe fe-feed"></i>
-        </a>
-      
-    </li>
-  </ul>
-</nav>
-
-<div class="search-form-wrap">
-  <div class="local-search local-search-plugin">
-  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
-  <div id="local-search-result" class="local-search-result"></div>
-</div>
-</div>
-</aside>
-<script src="/js/jquery-2.0.3.min.js"></script>
-<script src="/js/lazyload.min.js"></script>
-
-
-  <script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-  <script src="/js/search.js"></script>
-
-
-<script src="/js/ocean.js"></script>
-
+  </div>
 </body>
 </html>
