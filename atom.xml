@@ -6,40 +6,10 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kangning1206.github.io/"/>
-  <updated>2018-12-03T11:24:24.000Z</updated>
+  <updated>2018-12-03T04:16:17.000Z</updated>
   <id>https://kangning1206.github.io/</id>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>css-select</title>
-    <link href="https://kangning1206.github.io/2018/12/03/css-select/"/>
-    <id>https://kangning1206.github.io/2018/12/03/css-select/</id>
-    <published>2018-12-03T08:48:47.000Z</published>
-    <updated>2018-12-03T11:24:24.000Z</updated>
-    
-    <content type="html"><![CDATA[<table><thead><tr><th style="text-align:left">选择器</th><th style="text-align:left">权重</th></tr></thead><tbody><tr><td style="text-align:left">!important</td><td style="text-align:left">Infinity</td></tr><tr><td style="text-align:left">行间样式</td><td style="text-align:left">1000</td></tr><tr><td style="text-align:left">id</td><td style="text-align:left">100</td></tr><tr><td style="text-align:left">class、属性、伪类</td><td style="text-align:left">10</td></tr><tr><td style="text-align:left">标签、伪元素</td><td style="text-align:left">1</td></tr><tr><td style="text-align:left">通配符</td><td style="text-align:left">0</td></tr></tbody></table>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&quot;text-align:left&quot;&gt;选择器&lt;/th&gt;
-&lt;th style=&quot;text-align:left&quot;&gt;权重&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-al
-      
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>margin-collapsing</title>
@@ -77,28 +47,6 @@
       
       
         &lt;h2 id=&quot;盒子塌陷&quot;&gt;&lt;a href=&quot;#盒子塌陷&quot; class=&quot;headerlink&quot; title=&quot;盒子塌陷&quot;&gt;&lt;/a&gt;盒子塌陷&lt;/h2&gt;&lt;h3 id=&quot;什么是盒子塌陷&quot;&gt;&lt;a href=&quot;#什么是盒子塌陷&quot; class=&quot;headerlink&quot; title=&quot;什么是
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>BFC</title>
-    <link href="https://kangning1206.github.io/2018/12/03/BFC/"/>
-    <id>https://kangning1206.github.io/2018/12/03/BFC/</id>
-    <published>2018-12-03T03:17:05.000Z</published>
-    <updated>2018-12-03T03:41:53.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>块格式化上下文（Block Formatting Context，BFC） 是Web页面的可视化CSS渲染的一部分，是布局过程中生成块级盒子的区域，也是浮动元素与其他元素的交互限定区域。</p><p><code>块格式化上下文包含创建它的元素内部的所有内容.</code> BFC可以解决盒子塌陷；</p><p>下列方式会创建块格式化上下文：</p><ul><li>根元素或包含根元素的元素</li><li>浮动元素（元素的 float 不是 none）</li><li>绝对定位元素（元素的 position 为 absolute 或 fixed）</li><li>行内块元素（元素的 display 为 inline-block）</li><li>表格单元格（元素的 display为 table-cell，HTML表格单元格默认为该值）</li><li>表格标题（元素的 display 为 table-caption，HTML表格标题默认为该值）</li><li>匿名表格单元格元素（元素的 display为 table、table-row、 table-row-group、table-header-group、table-footer-group（分别是HTML table、row、tbody、thead、tfoot的默认属性）或 inline-table）</li><li>overflow 值不为 visible 的块元素</li><li>display 值为 flow-root 的元素</li><li>contain 值为 layout、content或 strict 的元素</li><li>弹性元素（display为 flex 或 inline-flex元素的直接子元素）</li><li>网格元素（display为 grid 或 inline-grid 元素的直接子元素）</li><li>多列容器（元素的 column-count 或 column-width 不为 auto，包括 column-count 为 1）</li><li>column-span 为 all 的元素始终会创建一个新的BFC，即使该元素没有包裹在一个多列容器中（标准变更，Chrome bug）。<br>块格式化上下文包含创建它的元素内部的所有内容.</li></ul><p>块格式化上下文对浮动定位（参见 float）与清除浮动（参见 clear）都很重要。浮动定位和清除浮动时只会应用于同一个BFC内的元素。浮动不会影响其它BFC中元素的布局，而清除浮动只能清除同一BFC中在它前面的元素的浮动。外边距折叠（Margin collapsing）也只会发生在属于同一BFC的块级元素之间。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;块格式化上下文（Block Formatting Context，BFC） 是Web页面的可视化CSS渲染的一部分，是布局过程中生成块级盒子的区域，也是浮动元素与其他元素的交互限定区域。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;块格式化上下文包含创建它的元素内部的所有内容.&lt;/code&gt;
       
     
     </summary>
@@ -260,29 +208,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>prototype</title>
-    <link href="https://kangning1206.github.io/2015/10/12/prototype/"/>
-    <id>https://kangning1206.github.io/2015/10/12/prototype/</id>
-    <published>2015-10-12T08:46:49.000Z</published>
-    <updated>2018-12-03T01:02:11.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>JavaScript 常被描述为一种基于原型的语言 (prototype-based language)——<code>每个对象拥有一个原型对象</code>，对象以其原型为<code>模板</code>、从原型<code>继承方法和属性</code>。原型对象也可能拥有原型，并从中继承方法和属性，一层一层、以此类推。这种关系常被称为原型链 (prototype chain)，它解释了为何一个对象会拥有定义在其他对象中的属性和方法。</p><p>javascript 创建对象</p><h2 id="方式1"><a href="#方式1" class="headerlink" title="方式1"></a>方式1</h2><p>手工作坊，生成的对象看似一致，实际是没有任何关系的，且生成效率很低；</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var mycar = &#123;</span><br><span class="line">  name : &apos;BMW&apos;,</span><br><span class="line">  color: &apos;black&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="方式2"><a href="#方式2" class="headerlink" title="方式2"></a>方式2</h2><p>加工厂，根据需要，零件快速组装，出厂都是属性名都是一样的，其他配置用户后期可以加装(自己增加属性);</p><p>特点：</p><ul><li>快速产出对象，对象之间是独立的个体；</li><li>实例对象之间仍然看不出有什么关联关系；比如看不出是同一个厂家生产的；</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function factory(name, color) &#123;</span><br><span class="line">  return &#123;</span><br><span class="line">    name: name,</span><br><span class="line">    color: color</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var myCar = factory(&apos;BMW&apos;,&apos;black&apos;);</span><br><span class="line"></span><br><span class="line">var yourCar = factory(&apos;MINI&apos;,&apos;Blue&apos;);</span><br></pre></td></tr></table></figure><h2 id="方式3"><a href="#方式3" class="headerlink" title="方式3"></a>方式3</h2><p>使用Object.create方法；</p><p>Object.create()方法创建一个新对象，使用现有的对象来提供新创建的对象的<strong>proto</strong>。</p><p>语法<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.create(proto, [propertiesObject])</span><br></pre></td></tr></table></figure></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const o = Object.create(null);</span><br><span class="line">// o = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">const o2 = Object.create(&#123;&#125;);</span><br><span class="line">// o2 = &#123;&#125;;</span><br></pre></td></tr></table></figure><blockquote><p>注意：o和o2 差异很大，o 没有任何继承属性和方法；o2却有</p></blockquote><h2 id="方式3-1"><a href="#方式3-1" class="headerlink" title="方式3"></a>方式3</h2><p>构造函数，使用关键字<code>new</code>去创建一个对象，new后边的函数构造函数，可以认为是个模板，模板中出来的产品肯定是一样的，相同的特性；</p><p>使用实例 <code>myCar.__proto__.constructor</code> 可以查看构造方法，这样我们就可以知道他的来源了；</p><p>在javascript中，实例对象上都有一个影藏属性<code>__proto__</code>,指向构造函数的<code>prototype</code>属性；</p><p><code>myCar.__proto__.constructor == Car</code> 返回 true</p><p><code>myCar.__proto__ == Car.prototype</code> 返回 true</p><p>myCar.<strong>proto</strong>.constructor == yourCar.<strong>proto</strong>.constructor</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function Car(name, color) &#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  this.color = color;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var myCar = new Car(&apos;BMW&apos;,&apos;black&apos;);</span><br><span class="line"></span><br><span class="line">var yourCar = new Car(&apos;MINI&apos;,&apos;Blue&apos;);</span><br></pre></td></tr></table></figure><p>此方式是创建一个用户自定义的对象需要两步：</p><p>通过编写函数来定义对象类型。<br>通过new来创建对象实例。<br>创建一个对象类型，需要创建一个指定其名称和属性的函数；对象的属性可以指向其他对象，看下面的例子：</p><p>当代码 new Car(…) 执行时，会发生以下事情：</p><ol><li>一个继承自 Car.prototype 的新对象被创建。 使用 myCar.<strong>proto</strong>找到 Car.prototype；</li><li>使用指定的参数调用构造函数 Car ，并将 this 绑定到新创建的对象。new Car 等同于 new Car()Car 不带任何参数调用的情况。</li><li>由构造函数返回的对象就是 new 表达式的结果。如果构造函数没有显式返回一个对象，则使用步骤1创建的对象。（一般情况下，构造函数不返回值，但是用户可以选择主动返回对象，来覆盖正常的对象创建步骤）</li></ol><p>## </p><ul><li>Oject 对象也是从函数继承过来的</li></ul><p>Object.<strong>proto</strong> == Function.prototype</p><ul><li>Object 是个函数，返回 “[object Function]”</li></ul><p>Object.prototype.toString.call(Object)</p><ul><li>函数 function foo(){} 与 Object函数 都继承与Function;<br>abc.<strong>proto</strong> == Object.<strong>proto</strong> 是相等的；</li></ul><p>你可以使用 Function.prototype 属性将共享属性添加到以前定义的对象类型。这定义了一个由该函数创建的所有对象共享的属性，而不仅仅是对象类型的其中一个实例。下面的代码将一个值为null的color属性添加到car类型的所有对象，然后仅在实例对象car1中用字符串“black”覆盖该值。详见 prototype。</p><p>浏览器首先检查，person1 对象是否具有可用的 valueOf() 方法。<br>如果没有，则浏览器检查 person1 对象的原型对象（即 Person构造函数的prototype属性所指向的对象）是否具有可用的 valueof() 方法。<br>如果也没有，则浏览器检查 Person() 构造函数的prototype属性所指向的对象的原型对象（即 Object构造函数的prototype属性所指向的对象）是否具有可用的 valueOf() 方法。这里有这个方法，于是该方法被调用。</p><p><a href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/Object_prototypes" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/Object_prototypes</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;JavaScript 常被描述为一种基于原型的语言 (prototype-based language)——&lt;code&gt;每个对象拥有一个原型对象&lt;/code&gt;，对象以其原型为&lt;code&gt;模板&lt;/code&gt;、从原型&lt;code&gt;继承方法和属性&lt;/code&gt;。原型对象也可能拥有原
-      
-    
-    </summary>
-    
-    
-      <category term="javascript 继承" scheme="https://kangning1206.github.io/tags/javascript-%E7%BB%A7%E6%89%BF/"/>
     
   </entry>
   
