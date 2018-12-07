@@ -5,17 +5,17 @@
   
   <title>设计模式-单例模式 | 点滴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="概念单例模式，顾名思义，只创建一个实例，不允许创建多个，应用在拥有一个全局配置，比如系统配置文件； 基本思路利用立即执行函数与闭包，返回一个对象，在闭包内控制实例化； 分类根据创建时机场景，分类以下两个  赖汉式：需要时创建对象 饿汉式：一开始立刻创建对象  实现赖汉式12345678910111213141516171819202122232425262728293031323334353637">
+  <meta name="description" content="概念单例模式，顾名思义，只创建一个实例，不允许创建多个，应用在拥有一个全局配置，比如系统配置文件； 更多应用场景 https://www.cnblogs.com/restartyang/articles/7770856.html 介绍的很多； 基本思路利用立即执行函数与闭包，返回一个对象，在闭包内控制实例化； 分类根据创建时机场景，分类以下两个  赖汉式：需要时创建对象 饿汉式：一开始立刻创建对象">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式-单例模式">
 <meta property="og:url" content="https://kangning1206.github.io/2018/12/07/designpattern-1/index.html">
 <meta property="og:site_name" content="点滴">
-<meta property="og:description" content="概念单例模式，顾名思义，只创建一个实例，不允许创建多个，应用在拥有一个全局配置，比如系统配置文件； 基本思路利用立即执行函数与闭包，返回一个对象，在闭包内控制实例化； 分类根据创建时机场景，分类以下两个  赖汉式：需要时创建对象 饿汉式：一开始立刻创建对象  实现赖汉式12345678910111213141516171819202122232425262728293031323334353637">
+<meta property="og:description" content="概念单例模式，顾名思义，只创建一个实例，不允许创建多个，应用在拥有一个全局配置，比如系统配置文件； 更多应用场景 https://www.cnblogs.com/restartyang/articles/7770856.html 介绍的很多； 基本思路利用立即执行函数与闭包，返回一个对象，在闭包内控制实例化； 分类根据创建时机场景，分类以下两个  赖汉式：需要时创建对象 饿汉式：一开始立刻创建对象">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-07T11:48:18.000Z">
+<meta property="og:updated_time" content="2018-12-07T11:55:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式-单例模式">
-<meta name="twitter:description" content="概念单例模式，顾名思义，只创建一个实例，不允许创建多个，应用在拥有一个全局配置，比如系统配置文件； 基本思路利用立即执行函数与闭包，返回一个对象，在闭包内控制实例化； 分类根据创建时机场景，分类以下两个  赖汉式：需要时创建对象 饿汉式：一开始立刻创建对象  实现赖汉式12345678910111213141516171819202122232425262728293031323334353637">
+<meta name="twitter:description" content="概念单例模式，顾名思义，只创建一个实例，不允许创建多个，应用在拥有一个全局配置，比如系统配置文件； 更多应用场景 https://www.cnblogs.com/restartyang/articles/7770856.html 介绍的很多； 基本思路利用立即执行函数与闭包，返回一个对象，在闭包内控制实例化； 分类根据创建时机场景，分类以下两个  赖汉式：需要时创建对象 饿汉式：一开始立刻创建对象">
   
   <link rel="stylesheet" href="/css/index.css">
 </head>
@@ -62,6 +62,7 @@
   <p class="sub">12月 7, 2018</p>
   <article class="content">
     <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>单例模式，顾名思义，只创建一个实例，不允许创建多个，应用在拥有一个全局配置，比如系统配置文件；</p>
+<p>更多应用场景 <a href="https://www.cnblogs.com/restartyang/articles/7770856.html" target="_blank" rel="noopener">https://www.cnblogs.com/restartyang/articles/7770856.html</a> 介绍的很多；</p>
 <h2 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h2><p>利用立即执行函数与闭包，返回一个对象，在闭包内控制实例化；</p>
 <h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>根据创建时机场景，分类以下两个</p>
 <ul>
