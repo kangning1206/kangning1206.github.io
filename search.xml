@@ -3,6 +3,17 @@
   
     
     <entry>
+      <title>prototype关系图</title>
+      <link href="/2018/12/08/prototype-img/"/>
+      <url>/2018/12/08/prototype-img/</url>
+      
+        <content type="html"><![CDATA[<p>js中对象、构造函数prototype、Function、Object关系。</p><embed src="/img/prototype.pdf" type="application/pdf" width="100%" height="600px">]]></content>
+      
+      
+      
+    </entry>
+    
+    <entry>
       <title>设计模式-单例模式</title>
       <link href="/2018/12/07/designpattern-1/"/>
       <url>/2018/12/07/designpattern-1/</url>
