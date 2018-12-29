@@ -262,6 +262,28 @@
   </entry>
   
   <entry>
+    <title>cookie</title>
+    <link href="https://kangning1206.github.io/2016/12/28/cookie/"/>
+    <id>https://kangning1206.github.io/2016/12/28/cookie/</id>
+    <published>2016-12-28T10:35:53.000Z</published>
+    <updated>2018-12-28T11:07:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="cookie安全"><a href="#cookie安全" class="headerlink" title="cookie安全"></a>cookie安全</h2><ul><li>设置 secure 属性；仅允许 cookie 在https 协议下在服务器和客户端之间传输；</li><li>设置 HttpOnly 属性；禁止 JavaScript 读取，同时可以防止 xss 攻击；</li><li>敏感信息不再 cookie 中存储；</li><li>类似论坛、发帖、评论，过滤掉非法信息，避免注入代码；</li><li>cookie 和 session 双重验证；</li><li>二次验证码</li><li>优化网站，提升规则策略，使攻击者攻击成本增加；</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;cookie安全&quot;&gt;&lt;a href=&quot;#cookie安全&quot; class=&quot;headerlink&quot; title=&quot;cookie安全&quot;&gt;&lt;/a&gt;cookie安全&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;设置 secure 属性；仅允许 cookie 在https 协议下在服务器和客
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>xss 攻击与防御</title>
     <link href="https://kangning1206.github.io/2016/08/15/xss/"/>
     <id>https://kangning1206.github.io/2016/08/15/xss/</id>

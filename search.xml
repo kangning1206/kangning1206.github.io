@@ -124,6 +124,17 @@
     </entry>
     
     <entry>
+      <title>cookie</title>
+      <link href="/2016/12/28/cookie/"/>
+      <url>/2016/12/28/cookie/</url>
+      
+        <content type="html"><![CDATA[<h2 id="cookie安全"><a href="#cookie安全" class="headerlink" title="cookie安全"></a>cookie安全</h2><ul><li>设置 secure 属性；仅允许 cookie 在https 协议下在服务器和客户端之间传输；</li><li>设置 HttpOnly 属性；禁止 JavaScript 读取，同时可以防止 xss 攻击；</li><li>敏感信息不再 cookie 中存储；</li><li>类似论坛、发帖、评论，过滤掉非法信息，避免注入代码；</li><li>cookie 和 session 双重验证；</li><li>二次验证码</li><li>优化网站，提升规则策略，使攻击者攻击成本增加；</li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    <entry>
       <title>xss 攻击与防御</title>
       <link href="/2016/08/15/xss/"/>
       <url>/2016/08/15/xss/</url>
