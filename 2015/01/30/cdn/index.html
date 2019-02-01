@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>cdn 在前端中应用 | 点滴</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="什么是cnd？CDN（Content Delivery Network，内容分发网络），是一种网络服务，一般存储静态资源，提供给用户访问； 简单理解 有一套分布在各地物理服务器、每台服务器上提供相同的内容，提供给用户就近访问；  解决了什么问题技术源于生活、又高于生活；所以出现一种新技术时，肯定是为了解决生活中的问题。 我们回头传统网站，客户端访问服务器，服务器返回html页面、js、css、图片">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cdn 在前端中应用">
+<meta property="og:url" content="https://kangning1206.github.io/2015/01/30/cdn/index.html">
+<meta property="og:site_name" content="点滴">
+<meta property="og:description" content="什么是cnd？CDN（Content Delivery Network，内容分发网络），是一种网络服务，一般存储静态资源，提供给用户访问； 简单理解 有一套分布在各地物理服务器、每台服务器上提供相同的内容，提供给用户就近访问；  解决了什么问题技术源于生活、又高于生活；所以出现一种新技术时，肯定是为了解决生活中的问题。 我们回头传统网站，客户端访问服务器，服务器返回html页面、js、css、图片">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://img-blog.csdn.net/20170105133414392">
+<meta property="og:updated_time" content="2019-02-01T06:14:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="cdn 在前端中应用">
+<meta name="twitter:description" content="什么是cnd？CDN（Content Delivery Network，内容分发网络），是一种网络服务，一般存储静态资源，提供给用户访问； 简单理解 有一套分布在各地物理服务器、每台服务器上提供相同的内容，提供给用户就近访问；  解决了什么问题技术源于生活、又高于生活；所以出现一种新技术时，肯定是为了解决生活中的问题。 我们回头传统网站，客户端访问服务器，服务器返回html页面、js、css、图片">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20170105133414392">
+  
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+</html>
+<body style="
+
+
+  background-color: #eff0f6
+
+">
+  <div id="container">
+    <nav id="nav">
+  <header class="header">
+    <a href="/" class="title">kangning1206</a>
+  </header>
+  <div class="ctnWrap">
+    <div class="icons">
+      
+        
+          
+            <a href="https://github.com/kangning1206" target="_blank" class="nav-icn iconfont icon-github"></a>
+          
+        
+      
+    </div>
+    <div class="menu">
+      
+        
+            <a href="/" class="nav-menu ">HOME</a>
+          
+        
+            <a href="/archives" class="nav-menu ">ARCHIVE</a>
+          
+        
+            <a href="/about" class="nav-menu ">ABOUT</a>
+          
+        
+      
+    </div>
+  </div>
+</nav>
+    <div id="main"><section class="article">
+  <h2 class="title">cdn 在前端中应用</h2>
+  <p class="sub">1月 30, 2015</p>
+  <article class="content">
+    <h1 id="什么是cnd？"><a href="#什么是cnd？" class="headerlink" title="什么是cnd？"></a>什么是cnd？</h1><p>CDN（Content Delivery Network，内容分发网络），是一种网络服务，一般存储静态资源，提供给用户访问；</p>
+<p>简单理解 有一套<code>分布在各地</code>物理服务器、每台服务器上提供<code>相同的内容</code>，提供给用户<code>就近访问</code>；</p>
+<p><img src="https://img-blog.csdn.net/20170105133414392" alt=""></p>
+<h1 id="解决了什么问题"><a href="#解决了什么问题" class="headerlink" title="解决了什么问题"></a>解决了什么问题</h1><p>技术源于生活、又高于生活；所以出现一种新技术时，肯定是为了解决生活中的问题。</p>
+<p>我们回头传统网站，客户端访问服务器，服务器返回html页面、js、css、图片、数据等；请求的资源种类就多，我们对资源进行分类，发现js、css、图片(非服务器动态生成的静态)是纯静态的；</p>
+<p>第一种场景：当客户端访问很高时，这么多资源都需要服务器处理，压力一定是不小的，因此我们将静态资源剥离出去，放置在另外一台服务器上，减少主服务器的压力；</p>
+<p>第二种：即使访问第三方服务器，如果是长距离，网络转发解析耗时是非常明显的，因此我们需要部署在各地部署服务器，当用户访问时，由最近的服务器进行相应； 这个小同一个域名被解析为不同的IP，CND服务商会提供一种动态解析域名服务；</p>
+<h1 id="好处"><a href="#好处" class="headerlink" title="好处"></a>好处</h1><ul>
+<li>分担了主域名服务器压力；</li>
+<li>一般在第三方域名，不同域名下，网络传输不会携带cookie；</li>
+<li>提供服务器缓存；</li>
+</ul>
+<p>待完成…..</p>
+
+  </article>
+  <footer class="f-cf">
+    
+      <a href="/2015/08/10/GC/" class="link f-fl">⟵GC-垃圾回收</a>
+    
+    
+      <a href="/2015/01/30/css/" class="link f-fr">css⟶</a>
+    
+  </footer>
+</section></div>
+    <footer id="footer" class="f-cf">
+  kangning1206@163.com
+  
+    
+      
+        · <a href="https://github.com/kangning1206" target="_blank" class="nav-icn">GitHub</a>
+      
+    
+  
+  <span class="copyright">All rights reserved @Clover Tuan</span>
+</footer>
+  </div>
+</body>
+</html>

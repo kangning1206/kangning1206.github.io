@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>webpack 优化 | 点滴</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="优化触发 知道慢在哪里使用插件 speed-measure-webpack-plugin 查看每个loader和插件执行耗时时间；针对耗时的分析问题和处理，明确知道那个点耗时比较多； 包的大小使用插件 webpack-bundle-analyer 大包分离出去，减小体积，剥离依赖，比如从 cdn 加载依赖； 多实例HappyPack 多进程处理 loader 并行压缩webpack3: paral">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack 优化">
+<meta property="og:url" content="https://kangning1206.github.io/2019/01/15/webpack-optimization/index.html">
+<meta property="og:site_name" content="点滴">
+<meta property="og:description" content="优化触发 知道慢在哪里使用插件 speed-measure-webpack-plugin 查看每个loader和插件执行耗时时间；针对耗时的分析问题和处理，明确知道那个点耗时比较多； 包的大小使用插件 webpack-bundle-analyer 大包分离出去，减小体积，剥离依赖，比如从 cdn 加载依赖； 多实例HappyPack 多进程处理 loader 并行压缩webpack3: paral">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-15T10:36:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webpack 优化">
+<meta name="twitter:description" content="优化触发 知道慢在哪里使用插件 speed-measure-webpack-plugin 查看每个loader和插件执行耗时时间；针对耗时的分析问题和处理，明确知道那个点耗时比较多； 包的大小使用插件 webpack-bundle-analyer 大包分离出去，减小体积，剥离依赖，比如从 cdn 加载依赖； 多实例HappyPack 多进程处理 loader 并行压缩webpack3: paral">
+  
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+</html>
+<body style="
+
+
+  background-color: #eff0f6
+
+">
+  <div id="container">
+    <nav id="nav">
+  <header class="header">
+    <a href="/" class="title">kangning1206</a>
+  </header>
+  <div class="ctnWrap">
+    <div class="icons">
+      
+        
+          
+            <a href="https://github.com/kangning1206" target="_blank" class="nav-icn iconfont icon-github"></a>
+          
+        
+      
+    </div>
+    <div class="menu">
+      
+        
+            <a href="/" class="nav-menu ">HOME</a>
+          
+        
+            <a href="/archives" class="nav-menu ">ARCHIVE</a>
+          
+        
+            <a href="/about" class="nav-menu ">ABOUT</a>
+          
+        
+      
+    </div>
+  </div>
+</nav>
+    <div id="main"><section class="article">
+  <h2 class="title">webpack 优化</h2>
+  <p class="sub">1月 15, 2019</p>
+  <article class="content">
+    <p>优化触发</p>
+<h2 id="知道慢在哪里"><a href="#知道慢在哪里" class="headerlink" title="知道慢在哪里"></a>知道慢在哪里</h2><p>使用插件 speed-measure-webpack-plugin 查看每个loader和插件执行耗时时间；<br>针对耗时的分析问题和处理，明确知道那个点耗时比较多；</p>
+<h2 id="包的大小"><a href="#包的大小" class="headerlink" title="包的大小"></a>包的大小</h2><p>使用插件 webpack-bundle-analyer</p>
+<p>大包分离出去，减小体积，剥离依赖，比如从 cdn 加载依赖；</p>
+<h2 id="多实例"><a href="#多实例" class="headerlink" title="多实例"></a>多实例</h2><p>HappyPack 多进程处理 loader</p>
+<h2 id="并行压缩"><a href="#并行压缩" class="headerlink" title="并行压缩"></a>并行压缩</h2><p>webpack3: parallel-uglify-plugin</p>
+<p>webpack4: uglifyjs-webpack-plugin</p>
+<h2 id="分包"><a href="#分包" class="headerlink" title="分包"></a>分包</h2><p>externals,对类库依赖包不进行打包，使用cdn引入；</p>
+<p>解决了打包速度和包体积；包体积对应用更有效；打包速度仅影响开发者体验；</p>
+<h2 id="提取公共"><a href="#提取公共" class="headerlink" title="提取公共"></a>提取公共</h2><p>将基础包提取到一个文件中；</p>
+<p>DDLPlugin进行分包</p>
+
+  </article>
+  <footer class="f-cf">
+    
+      <a href="/2019/01/29/Polyfill/" class="link f-fl">⟵Polyfill 方案的过去、现在和未来</a>
+    
+    
+      <a href="/2019/01/08/wxml/" class="link f-fr">微信小程序标记语言wxml⟶</a>
+    
+  </footer>
+</section></div>
+    <footer id="footer" class="f-cf">
+  kangning1206@163.com
+  
+    
+      
+        · <a href="https://github.com/kangning1206" target="_blank" class="nav-icn">GitHub</a>
+      
+    
+  
+  <span class="copyright">All rights reserved @Clover Tuan</span>
+</footer>
+  </div>
+</body>
+</html>
