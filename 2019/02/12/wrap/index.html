@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="点滴">
 <meta property="og:description" content="数据分类先明白一个概念，JavaScript中数据类型分类基本类型和引用类型，其中基本类型数字、字符串、bool、null,undefined; 基本类型基本类型特点表示的是一个简单的数据结构，其本身不提供任何方法或者属性； 比如字符串var str = &amp;#39;hello&amp;#39;; 仅表示一段文字； 现实中但实际使用生活中，我们又需要对字符串进行截取、搜索、转化大小写等需求，按照常理，这些需">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-12T08:53:09.000Z">
+<meta property="og:updated_time" content="2019-02-12T08:57:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript 中的基本包装类型">
 <meta name="twitter:description" content="数据分类先明白一个概念，JavaScript中数据类型分类基本类型和引用类型，其中基本类型数字、字符串、bool、null,undefined; 基本类型基本类型特点表示的是一个简单的数据结构，其本身不提供任何方法或者属性； 比如字符串var str = &amp;#39;hello&amp;#39;; 仅表示一段文字； 现实中但实际使用生活中，我们又需要对字符串进行截取、搜索、转化大小写等需求，按照常理，这些需">
@@ -83,8 +83,9 @@ console.log(str.length)</code> 打印5；</p>
 <p>总结：</p>
 <ol>
 <li>基本类型就是简单的数据类型，不会有引用类型特性；</li>
-<li>为了使用方便，所看到的方法或属性是基本中间包装过一次，经过处理的后结果；</li>
+<li>为了使用方便，所看到的方法或属性是被引用对象包装过一次的，只是将处理的结果返回；</li>
 <li>优先使用基本类型，尽可能不使用基本类型对应的包装类去实例化，如<code>new Sting()</code>少使用；</li>
+<li>明白了以上设计目的、内部处理过程，相信对 JavaScript 又有了深入了解；</li>
 </ol>
 
   </article>
